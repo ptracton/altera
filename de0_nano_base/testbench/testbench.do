@@ -1,0 +1,2 @@
+
+vlog ../testbench/testbench.v

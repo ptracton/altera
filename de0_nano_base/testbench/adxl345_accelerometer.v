@@ -1,0 +1,1 @@
+../behavioral/adxl345_accelerometer.v
