@@ -1,1 +1,0 @@
-../behavioral/i2c_eeprom_2k.v

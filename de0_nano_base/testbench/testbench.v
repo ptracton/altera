@@ -8,6 +8,8 @@
 // Update Count    : 0
 // Status          : Unknown, Use with caution!
 
+`timescale 1ns/1ps
+
 module testbench (/*AUTOARG*/) ;
 
 
@@ -66,7 +68,8 @@ module testbench (/*AUTOARG*/) ;
    // End of automatics
    /*AUTOREG*/
 
-   reg [1:0] 		KEY;
+   wire [1:0] 		KEY;
+   reg [1:0] 		KEY_reg;
    reg [3:0] 		SW;
    wire 		G_SENSOR_INT;
    reg [2:0] 		GPIO_2_IN;
@@ -121,12 +124,14 @@ module testbench (/*AUTOARG*/) ;
    //
    // I2C EEPROM
    //
-   i2c_eeprom_2k eeprom (/*AUTOINST*/
-			 // Inouts
-			 .I2C_SDAT		(I2C_SDAT),
-			 // Inputs
-			 .I2C_SCLK		(I2C_SCLK));
-
+   M24AA02 eeprom(
+		  .A0(1'b0), 
+		  .A1(1'b0), 
+		  .A2(1'b0), 
+		  .WP(1'b0), 
+		  .SDA(I2C_SDAT), 
+		  .SCL(I2C_SCLK), 
+		  .RESET(reset));
 
    //
    // ADC
@@ -154,8 +159,8 @@ module testbench (/*AUTOARG*/) ;
 				       .G_SENSOR_SDA_SDIO(G_SENSOR_SDA_SDIO),
 				       .G_SENSOR_SDO	(G_SENSOR_SDO),
 				       // Inputs
-				       .G_SENSOR_SCLK	(G_SENSOR_SCLK),
-				       .G_SENSOR_nCS	(G_SENSOR_nCS));
+				       .G_SENSOR_SCLK	(I2C_SCLK),
+				       .G_SENSOR_nCS	(G_SENSOR_CS_N));
    
 
    //
@@ -173,9 +178,13 @@ module testbench (/*AUTOARG*/) ;
 			   .DRAM_CLK		(DRAM_CLK),
 			   .DRAM_WE_N		(DRAM_WE_N),
 			   .DRAM_CS_N		(DRAM_CS_N));
-     
+
+
+   assign KEY[0] = reset;   
+   assign KEY[1] = KEY_reg[1];
+   
    initial begin
-      KEY <=2'b00;      
+      KEY_reg <=2'b00;      
       SW <= 4'b0;
       ADC_IN <= 8'h0;  
       GPIO_2_IN <= 3'b000;
@@ -186,7 +195,7 @@ module testbench (/*AUTOARG*/) ;
    initial begin
       @(posedge reset);
       $display("RESET RELEASED @ %d", $time);
-      repeat(100) @(posedge CLOCK_50);
+      repeat(3000) @(posedge CLOCK_50);
       $display("SIMULATION COMPLETE @ %d", $time); 
       $finish;
       

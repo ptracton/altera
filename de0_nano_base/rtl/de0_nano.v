@@ -14,136 +14,166 @@
 
 module de0_nano(
 
-	//////////// CLOCK //////////
-	CLOCK_50,
+		//////////// CLOCK //////////
+		CLOCK_50,
 
-	//////////// LED //////////
-	LED,
+		//////////// LED //////////
+		LED,
 
-	//////////// KEY //////////
-	KEY,
+		//////////// KEY //////////
+		KEY,
 
-	//////////// SW //////////
-	SW,
+		//////////// SW //////////
+		SW,
 
-	//////////// SDRAM //////////
-	DRAM_ADDR,
-	DRAM_BA,
-	DRAM_CAS_N,
-	DRAM_CKE,
-	DRAM_CLK,
-	DRAM_CS_N,
-	DRAM_DQ,
-	DRAM_DQM,
-	DRAM_RAS_N,
-	DRAM_WE_N,
+		//////////// SDRAM //////////
+		DRAM_ADDR,
+		DRAM_BA,
+		DRAM_CAS_N,
+		DRAM_CKE,
+		DRAM_CLK,
+		DRAM_CS_N,
+		DRAM_DQ,
+		DRAM_DQM,
+		DRAM_RAS_N,
+		DRAM_WE_N,
 
-	//////////// EPCS //////////
-	EPCS_ASDO,
-	EPCS_DATA0,
-	EPCS_DCLK,
-	EPCS_NCSO,
+		//////////// EPCS //////////
+		EPCS_ASDO,
+		EPCS_DATA0,
+		EPCS_DCLK,
+		EPCS_NCSO,
 
-	//////////// Accelerometer and EEPROM //////////
-	G_SENSOR_CS_N,
-	G_SENSOR_INT,
-	I2C_SCLK,
-	I2C_SDAT,
+		//////////// Accelerometer and EEPROM //////////
+		G_SENSOR_CS_N,
+		G_SENSOR_INT,
+		I2C_SCLK,
+		I2C_SDAT,
 
-	//////////// ADC //////////
-	ADC_CS_N,
-	ADC_SADDR,
-	ADC_SCLK,
-	ADC_SDAT,
+		//////////// ADC //////////
+		ADC_CS_N,
+		ADC_SADDR,
+		ADC_SCLK,
+		ADC_SDAT,
 
-	//////////// 2x13 GPIO Header //////////
-	GPIO_2,
-	GPIO_2_IN,
+		//////////// 2x13 GPIO Header //////////
+		GPIO_2,
+		GPIO_2_IN,
 
-	//////////// GPIO_0, GPIO_0 connect to GPIO Default //////////
-	GPIO_0,
-	GPIO_0_IN,
+		//////////// GPIO_0, GPIO_0 connect to GPIO Default //////////
+		GPIO_0,
+		GPIO_0_IN,
 
-	//////////// GPIO_1, GPIO_1 connect to GPIO Default //////////
-	GPIO_1,
-	GPIO_1_IN 
-);
+		//////////// GPIO_1, GPIO_1 connect to GPIO Default //////////
+		GPIO_1,
+		GPIO_1_IN 
+		);
 
-//=======================================================
-//  PARAMETER declarations
-//=======================================================
-
-
-//=======================================================
-//  PORT declarations
-//=======================================================
-
-//////////// CLOCK //////////
-input 		          		CLOCK_50;
-
-//////////// LED //////////
-output		     [7:0]		LED;
-
-//////////// KEY //////////
-input 		     [1:0]		KEY;
-
-//////////// SW //////////
-input 		     [3:0]		SW;
-
-//////////// SDRAM //////////
-output		    [12:0]		DRAM_ADDR;
-output		     [1:0]		DRAM_BA;
-output		          		DRAM_CAS_N;
-output		          		DRAM_CKE;
-output		          		DRAM_CLK;
-output		          		DRAM_CS_N;
-inout 		    [15:0]		DRAM_DQ;
-output		     [1:0]		DRAM_DQM;
-output		          		DRAM_RAS_N;
-output		          		DRAM_WE_N;
-
-//////////// EPCS //////////
-output		          		EPCS_ASDO;
-input 		          		EPCS_DATA0;
-output		          		EPCS_DCLK;
-output		          		EPCS_NCSO;
-
-//////////// Accelerometer and EEPROM //////////
-output		          		G_SENSOR_CS_N;
-input 		          		G_SENSOR_INT;
-output		          		I2C_SCLK;
-inout 		          		I2C_SDAT;
-
-//////////// ADC //////////
-output		          		ADC_CS_N;
-output		          		ADC_SADDR;
-output		          		ADC_SCLK;
-input 		          		ADC_SDAT;
-
-//////////// 2x13 GPIO Header //////////
-inout 		    [12:0]		GPIO_2;
-input 		     [2:0]		GPIO_2_IN;
-
-//////////// GPIO_0, GPIO_0 connect to GPIO Default //////////
-inout 		    [33:0]		GPIO_0;
-input 		     [1:0]		GPIO_0_IN;
-
-//////////// GPIO_1, GPIO_1 connect to GPIO Default //////////
-inout 		    [33:0]		GPIO_1;
-input 		     [1:0]		GPIO_1_IN;
+   //=======================================================
+   //  PARAMETER declarations
+   //=======================================================
 
 
-//=======================================================
-//  REG/WIRE declarations
-//=======================================================
+   //=======================================================
+   //  PORT declarations
+   //=======================================================
+
+   //////////// CLOCK //////////
+   input                                   CLOCK_50;
+
+   //////////// LED //////////
+   output [7:0] 			   LED;
+
+   //////////// KEY //////////
+   input [1:0] 				   KEY;
+
+   //////////// SW //////////
+   input [3:0] 				   SW;
+
+   //////////// SDRAM //////////
+   output [12:0] 			   DRAM_ADDR;
+   output [1:0] 			   DRAM_BA;
+   output                                  DRAM_CAS_N;
+   output                                  DRAM_CKE;
+   output                                  DRAM_CLK;
+   output                                  DRAM_CS_N;
+   inout [15:0] 			   DRAM_DQ;
+   output [1:0] 			   DRAM_DQM;
+   output                                  DRAM_RAS_N;
+   output                                  DRAM_WE_N;
+
+   //////////// EPCS //////////
+   output                                  EPCS_ASDO;
+   input                                   EPCS_DATA0;
+   output                                  EPCS_DCLK;
+   output                                  EPCS_NCSO;
+
+   //////////// Accelerometer and EEPROM //////////
+   output                                  G_SENSOR_CS_N;
+   input                                   G_SENSOR_INT;
+   output                                  I2C_SCLK;
+   inout                                   I2C_SDAT;
+
+   //////////// ADC //////////
+   output                                  ADC_CS_N;
+   output                                  ADC_SADDR;
+   output                                  ADC_SCLK;
+   input                                   ADC_SDAT;
+
+   //////////// 2x13 GPIO Header //////////
+   inout [12:0] 			   GPIO_2;
+   input [2:0] 				   GPIO_2_IN;
+
+   //////////// GPIO_0, GPIO_0 connect to GPIO Default //////////
+   inout [33:0] 			   GPIO_0;
+   input [1:0] 				   GPIO_0_IN;
+
+   //////////// GPIO_1, GPIO_1 connect to GPIO Default //////////
+   inout [33:0] 			   GPIO_1;
+   input [1:0] 				   GPIO_1_IN;
 
 
+   //=======================================================
+   //  REG/WIRE declarations
+   //=======================================================
+
+   /*AUTOREG*/
+   /*AUTOWIRE*/
 
 
-//=======================================================
-//  Structural coding
-//=======================================================
+   //=======================================================
+   //  Structural coding
+   //=======================================================
 
+   system_control sys_con(
+                          // Outputs
+                          .ready_sys            (ready_sys),
+                          .clk_sys50            (clk_sys50),
+                          .clk_sys200           (clk_sys200),
+                          .clk_sys33            (clk_sys33),
+                          .reset_sys            (reset_sys),
+                          // Inputs
+                          .CLK                  (CLOCK_50),
+                          .RESET                (KEY[0]));
+   //
+   // DE 0 NANO I2C 
+   //
+   wire 				   i2c_sclk;
+   wire 				   i2c_sda;
+   wire 				   i2c_sda_oe;
 
-
+   assign I2C_SCLK = i2c_sclk;
+   assign I2C_SDAT = (i2c_sda_oe) ? i2c_sda : 'bz;
+      
+   i2c i2c_top(
+	       // Outputs
+	       .sclk(i2c_sclk), 
+	       .sda(i2c_sda), 
+	       .sda_oe(i2c_sda_oe),
+	       // Inputs
+	       .clk(clk_sys50), 
+	       .reset(reset_sys)
+	       );
+   
+   
 endmodule
