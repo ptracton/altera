@@ -90,15 +90,12 @@ module avalon_slave (/*AUTOARG*/
 	     
 	  end
 	  32'h0000_0008:
-	     case (BYTE_ENABLE)
-	       4'b1111:  reg2[31:00] <= WRITEDATA[31:00];
-	       4'b1100:  reg2[31:16] <= WRITEDATA[31:16];
-	       4'b0011:  reg2[15:00] <= WRITEDATA[15:00];
-	       4'b1000:  reg2[31:24] <= WRITEDATA[31:24];
-	       4'b0100:  reg2[23:16] <= WRITEDATA[23:16];
-	       4'b0010:  reg2[15:08] <= WRITEDATA[15:08];
-	       4'b0001:  reg2[07:00] <= WRITEDATA[07:00];
-	     endcase // case (BYTE_ENABLE)
+	    begin
+	       reg2[31:24] <= BYTE_ENABLE[3] ?  WRITEDATA[31:24]: reg2[31:24];
+	       reg2[23:16] <= BYTE_ENABLE[2] ?  WRITEDATA[23:16]: reg2[23:16];
+	       reg2[15:08] <= BYTE_ENABLE[1] ?  WRITEDATA[15:08]: reg2[15:08];
+	       reg2[07:00] <= BYTE_ENABLE[0] ?  WRITEDATA[07:00]: reg2[07:00];
+	    end
 	endcase // case (ADDRESS)
      end else begin
 	WAITREQUEST_write <= 1'b0;	
