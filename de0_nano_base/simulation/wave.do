@@ -112,16 +112,6 @@ add wave -noupdate -group {ADXL345 I2C} -radix hexadecimal /testbench/accelerome
 add wave -noupdate -group {ADXL345 I2C} -radix hexadecimal /testbench/accelerometer/i2c/shift_reg
 add wave -noupdate -group {ADXL345 I2C} -radix hexadecimal /testbench/accelerometer/i2c/byte_received
 add wave -noupdate -group {ADXL345 I2C} -radix hexadecimal /testbench/accelerometer/i2c/byte_recevied
-add wave -noupdate -group {I2C TOP} -radix hexadecimal /testbench/dut/i2c_top/clk
-add wave -noupdate -group {I2C TOP} -radix hexadecimal /testbench/dut/i2c_top/reset
-add wave -noupdate -group {I2C TOP} -radix hexadecimal /testbench/dut/i2c_top/sclk
-add wave -noupdate -group {I2C TOP} -radix hexadecimal /testbench/dut/i2c_top/sda
-add wave -noupdate -group {I2C TOP} -radix hexadecimal /testbench/dut/i2c_top/sda_oe
-add wave -noupdate -group {I2C CLOCKING} -radix hexadecimal /testbench/dut/i2c_top/clocking/clk
-add wave -noupdate -group {I2C CLOCKING} -radix hexadecimal /testbench/dut/i2c_top/clocking/reset
-add wave -noupdate -group {I2C CLOCKING} -radix hexadecimal /testbench/dut/i2c_top/clocking/sclk
-add wave -noupdate -group {I2C CLOCKING} -radix hexadecimal /testbench/dut/i2c_top/clocking/clk_count
-add wave -noupdate -group {I2C CLOCKING} -radix hexadecimal /testbench/dut/i2c_top/clocking/clk_count_done
 add wave -noupdate -expand -group EEPROM -radix hexadecimal /testbench/eeprom/A0
 add wave -noupdate -expand -group EEPROM -radix hexadecimal /testbench/eeprom/A1
 add wave -noupdate -expand -group EEPROM -radix hexadecimal /testbench/eeprom/A2
@@ -180,6 +170,7 @@ add wave -noupdate -expand -group EEPROM -radix hexadecimal /testbench/eeprom/Wr
 add wave -noupdate -expand -group EEPROM -radix hexadecimal /testbench/eeprom/WriteData_7
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {2963450 ps} 0}
+quietly wave cursor active 0
 configure wave -namecolwidth 205
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left

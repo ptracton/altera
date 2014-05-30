@@ -162,18 +162,13 @@ module de0_nano(
    wire 				   i2c_sda;
    wire 				   i2c_sda_oe;
 
-   assign I2C_SCLK = i2c_sclk;
-   assign I2C_SDAT = (i2c_sda_oe) ? i2c_sda : 'bz;
-      
-   i2c i2c_top(
-	       // Outputs
-	       .sclk(i2c_sclk), 
-	       .sda(i2c_sda), 
-	       .sda_oe(i2c_sda_oe),
-	       // Inputs
-	       .clk(clk_sys50), 
-	       .reset(reset_sys)
-	       );
+   i2c i2c_inst(
+		.sclk(i2c_sclk), 
+		.sda(i2c_sda), 
+		.sda_oe(i2c_sda_oe),
+		.clk(clk_sys50), 
+		.reset(reset_sys)
+		);
    
    
 endmodule
