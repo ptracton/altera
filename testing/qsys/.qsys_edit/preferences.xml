@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable>
+  <columns>
+   <connections preferredWidth="127" />
+   <irq preferredWidth="34" />
+   <name preferredWidth="201" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="175" />
+   <clocksource preferredWidth="175" />
+   <frequency preferredWidth="156" />
+  </columns>
+ </clocktable>
+ <window width="1924" height="1086" x="-5" y="25" />
+ <library expandedCategories="Project,Library" />
+ <generation
+   simulation="VERILOG"
+   testbench_system="STANDARD"
+   testbench_simulation="VERILOG"
+   path="/user/tractp1/scratch/hardware/altera/_PROJECT_NAME_" />
+</preferences>

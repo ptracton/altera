@@ -1,0 +1,31 @@
+
+WORK > DEFAULT
+DEFAULT:                                                                  ./libraries/work/                                                                    
+work:                                                                     ./libraries/work/                                                                    
+rsp_xbar_mux:                                                             ./libraries/rsp_xbar_mux/                                                            
+rsp_xbar_demux:                                                           ./libraries/rsp_xbar_demux/                                                          
+cmd_xbar_mux:                                                             ./libraries/cmd_xbar_mux/                                                            
+cmd_xbar_demux_001:                                                       ./libraries/cmd_xbar_demux_001/                                                      
+cmd_xbar_demux:                                                           ./libraries/cmd_xbar_demux/                                                          
+limiter:                                                                  ./libraries/limiter/                                                                 
+id_router:                                                                ./libraries/id_router/                                                               
+addr_router:                                                              ./libraries/addr_router/                                                             
+CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: ./libraries/CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo/
+CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent:          ./libraries/CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent/         
+CPU_instruction_master_translator_avalon_universal_master_0_agent:        ./libraries/CPU_instruction_master_translator_avalon_universal_master_0_agent/       
+CPU_jtag_debug_module_translator:                                         ./libraries/CPU_jtag_debug_module_translator/                                        
+CPU_instruction_master_translator:                                        ./libraries/CPU_instruction_master_translator/                                       
+rst_controller:                                                           ./libraries/rst_controller/                                                          
+irq_mapper:                                                               ./libraries/irq_mapper/                                                              
+mm_interconnect_0:                                                        ./libraries/mm_interconnect_0/                                                       
+jtag_uart_0:                                                              ./libraries/jtag_uart_0/                                                             
+SWITCHES:                                                                 ./libraries/SWITCHES/                                                                
+LEDS:                                                                     ./libraries/LEDS/                                                                    
+MEMORY:                                                                   ./libraries/MEMORY/                                                                  
+CPU:                                                                      ./libraries/CPU/                                                                     
+altera_ver:                                                               ./libraries/altera_ver/                                                              
+lpm_ver:                                                                  ./libraries/lpm_ver/                                                                 
+sgate_ver:                                                                ./libraries/sgate_ver/                                                               
+altera_mf_ver:                                                            ./libraries/altera_mf_ver/                                                           
+altera_lnsim_ver:                                                         ./libraries/altera_lnsim_ver/                                                        
+cycloneive_ver:                                                           ./libraries/cycloneive_ver/                                                          
