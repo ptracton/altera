@@ -100,7 +100,7 @@ module avalon_mm_master (/*AUTOARG*/
    always @(*)
      if (RESET) begin
 	next_state = STATE_IDLE;
-	ADDERSS = 0;
+	ADDRESS = 0;
 	READ = 0;
 	WRITE = 0;
 	WRITEDATA = 0;
@@ -132,16 +132,14 @@ module avalon_mm_master (/*AUTOARG*/
 		end
 
 		if (WAITREQUEST) begin
-		   next_state = STATE_WAIT;		   
-		end else if (rnw) begin
-		   next_state = STATE_READ;		   
+		   next_state = STATE_WAIT;		   			   
 		end else begin
-		   next_state = STATE_WRITE;		   
+		   next_state = STATE_DONE;		   
 		end
 		
 	     end else begin // if (start)
 		next_state = STATE_IDLE;
-		ADDERSS = 0;
+		ADDRESS = 0;
 		READ = 0;
 		WRITE = 0;
 		WRITEDATA = 0;
@@ -172,7 +170,7 @@ module avalon_mm_master (/*AUTOARG*/
 
 	  default:begin
 	     next_state = STATE_IDLE;
-	     ADDERSS = 0;
+	     ADDRESS = 0;
 	     READ = 0;
 	     WRITE = 0;
 	     WRITEDATA = 0;

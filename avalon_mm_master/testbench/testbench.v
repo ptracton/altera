@@ -18,6 +18,9 @@ module testbench (/*AUTOARG*/) ;
    // You must tell modelsim to compile as system verilog!
    //
    import avalon_mm_pkg::*;
+
+   parameter READ_TRANSACTION = 1;
+   parameter WRITE_TRANSACTION = 0;
    
    
    //---------------------------------------------------------------------------
@@ -70,67 +73,40 @@ module testbench (/*AUTOARG*/) ;
    /*AUTOREG*/
    /*AUTOWIRE*/
 
-   altera_avalon_mm_master_bfm #(
-                                 .AV_ADDRESS_W               (32),
-                                 .AV_SYMBOL_W                (8),
-                                 .AV_NUMSYMBOLS              (4),
-                                 .AV_BURSTCOUNT_W            (3),
-                                 .AV_READRESPONSE_W          (8),
-                                 .AV_WRITERESPONSE_W         (8),
-                                 .USE_READ                   (1),
-                                 .USE_WRITE                  (1),
-                                 .USE_ADDRESS                (1),
-                                 .USE_BYTE_ENABLE            (1),
-                                 .USE_BURSTCOUNT             (1),
-                                 .USE_READ_DATA              (1),
-                                 .USE_READ_DATA_VALID        (1),
-                                 .USE_WRITE_DATA             (1),
-                                 .USE_BEGIN_TRANSFER         (0),
-                                 .USE_BEGIN_BURST_TRANSFER   (0),
-                                 .USE_WAIT_REQUEST           (1),
-                                 .USE_TRANSACTIONID          (0),
-                                 .USE_WRITERESPONSE          (0),
-                                 .USE_READRESPONSE           (0),
-                                 .USE_CLKEN                  (0),
-                                 .AV_CONSTANT_BURST_BEHAVIOR (1),
-                                 .AV_BURST_LINEWRAP          (1),
-                                 .AV_BURST_BNDR_ONLY         (1),
-                                 .AV_MAX_PENDING_READS       (0),
-                                 .AV_MAX_PENDING_WRITES      (0),
-                                 .AV_FIX_READ_LATENCY        (1),
-                                 .AV_READ_WAIT_TIME          (1),
-                                 .AV_WRITE_WAIT_TIME         (0),
-                                 .REGISTER_WAITREQUEST       (0),
-                                 .AV_REGISTERINCOMINGSIGNALS (0),
-                                 .VHDL_ID                    (0)
-                                 ) mm_master_bfm_0 (
-                                                    .clk                      (CLK),         //       clk.clk
-                                                    .reset                    (RESET), // clk_reset.reset
-                                                    .avm_address              (ADDRESS),                                //        m0.address
-                                                    .avm_burstcount           (BURSTCOUNT),                                //          .burstcount
-                                                    .avm_readdata             (READDATA),                                //          .readdata
-                                                    .avm_writedata            (WRITEDATA),                                //          .writedata
-                                                    .avm_waitrequest          (WAITREQUEST),                                //          .waitrequest
-                                                    .avm_write                (WRITE),                                //          .write
-                                                    .avm_read                 (READ),                                //          .read
-                                                    .avm_byteenable           (BYTE_ENABLE),                                //          .byteenable
-                                                    .avm_readdatavalid        (READDATAVALID),                                //          .readdatavalid
-                                                    .avm_begintransfer        (BEGINTRANSFER),                                // (terminated)
-                                                    .avm_beginbursttransfer   (BEGINBURSTTRANSFER),                                // (terminated)
-                                                    .avm_arbiterlock          (),                                // (terminated)
-                                                    .avm_lock                 (LOCK),                            // (terminated)
-                                                    .avm_debugaccess          (),                                // (terminated)
-                                                    .avm_transactionid        (),                                // (terminated)
-                                                    .avm_readid               (8'b00000000),                     // (terminated)
-                                                    .avm_writeid              (8'b00000000),                     // (terminated)
-                                                    .avm_clken                (),                                // (terminated)
-                                                    .avm_response             (2'b00),                           // (terminated)
-                                                    .avm_writeresponserequest (),                                // (terminated)
-                                                    .avm_writeresponsevalid   (1'b0),                            // (terminated)
-                                                    .avm_readresponse         (8'b00000000),                     // (terminated)
-                                                    .avm_writeresponse        (8'b00000000)                      // (terminated)
-                                                    );
-
+   altera_avalon_mm_slave_bfm slave(
+                                    .clk(CLK),   
+                                    .reset(RESET),
+                                    
+                                    .avs_clken(1'b0),
+                                    
+                                    .avs_waitrequest(WAITREQUEST),
+                                    .avs_write(WRITE),
+                                    .avs_read(READ),
+                                    .avs_address(ADDRESS),
+                                    .avs_byteenable(BYTE_ENABLE),
+                                    .avs_burstcount(BURSTCOUNT),
+                                    .avs_beginbursttransfer(BEGINBURSTTRANSFER),
+                                    .avs_begintransfer(BEGINTRANSFER),
+                                    .avs_writedata(WRITEDATA),
+                                    .avs_readdata(READDATA),
+                                    .avs_readdatavalid(READDATAVALID),
+                                    .avs_arbiterlock(1'b0),
+                                    .avs_lock(LOCK),
+                                    .avs_debugaccess(1'b0),
+				    
+                                    .avs_transactionid(8'b0),
+                                    .avs_readresponse(),
+                                    .avs_readid(),
+                                    .avs_writeresponserequest(1'b0),
+                                    .avs_writeresponsevalid(),
+                                    .avs_writeresponse(),
+                                    .avs_writeid(),
+                                    .avs_response()
+                                  );
+   defparam slave.USE_BURSTCOUNT = 0;
+   defparam slave.USE_BEGIN_TRANSFER = 0;
+   defparam slave.USE_BEGIN_BURST_TRANSFER = 0;
+   
    
    //---------------------------------------------------------------------------
    //   
@@ -138,23 +114,41 @@ module testbench (/*AUTOARG*/) ;
    //
    //---------------------------------------------------------------------------
 
-   avalon_slave dut(/*AUTOINST*/
-                    // Outputs
-                    .READDATA           (READDATA[31:0]),
-                    .WAITREQUEST        (WAITREQUEST),
-                    .READDATAVALID      (READDATAVALID),
-                    // Inputs
-                    .CLK                (CLK),
-                    .RESET              (RESET),
-                    .ADDRESS            (ADDRESS[31:0]),
-                    .BEGINTRANSFER      (BEGINTRANSFER),
-                    .BYTE_ENABLE        (BYTE_ENABLE[3:0]),
-                    .READ               (READ),
-                    .WRITE              (WRITE),
-                    .WRITEDATA          (WRITEDATA[31:0]),
-                    .LOCK               (LOCK),
-                    .BURSTCOUNT         (BURSTCOUNT),
-                    .BEGINBURSTTRANSFER (BEGINBURSTTRANSFER)); 
+   //
+   // Control Signals -- NOT part of AVALON
+   //
+   reg [31:0] 		data_to_write;
+   reg 			rnw;
+   reg 			start;
+   reg [3:0] 		bytes;   
+   reg [31:0] 		address_to_access;
+   wire 		done;
+   wire [31:0] 		data_read;
+   
+   avalon_mm_master dut(/*AUTOINST*/
+			// Outputs
+			.ADDRESS	(ADDRESS[31:0]),
+			.BEGINTRANSFER	(BEGINTRANSFER),
+			.BYTE_ENABLE	(BYTE_ENABLE[3:0]),
+			.READ		(READ),
+			.WRITE		(WRITE),
+			.WRITEDATA	(WRITEDATA[31:0]),
+			.LOCK		(LOCK),
+			.BURSTCOUNT	(BURSTCOUNT),
+			.done		(done),
+			.data_read	(data_read[31:0]),
+			// Inputs
+			.CLK		(CLK),
+			.RESET		(RESET),
+			.READDATA	(READDATA[31:0]),
+			.WAITREQUEST	(WAITREQUEST),
+			.READDATAVALID	(READDATAVALID),
+			.data_to_write	(data_to_write[31:0]),
+			.rnw		(rnw),
+			.start		(start),
+			.bytes		(bytes[3:0]),
+			.address_to_access(address_to_access[31:0]));
+   
    
 
 
@@ -163,76 +157,32 @@ module testbench (/*AUTOARG*/) ;
    // TASKS
    // 
    //---------------------------------------------------------------------------   
-   task bfm_master_push_command;
-      input Request_t request;
+   task master_transaction;
       input [31:0] address;
-      input [3:0]  byte_enable;
       input [31:0] data;
+      input [3:0]  bytess;
+      input 	   rnws;
       
       begin
-         //$display("BFM MASTER PUSH: Addr 0x%h Data 0x%h Byte Enable 0x%h @ %d", address, data, byte_enable, $time);
-         mm_master_bfm_0.set_command_request( request ); 
-         mm_master_bfm_0.set_command_address(address);
-         mm_master_bfm_0.set_command_byte_enable(byte_enable,0);
-         mm_master_bfm_0.set_command_idle(0, 0);
-         mm_master_bfm_0.set_command_init_latency(0);
-         mm_master_bfm_0.set_command_burst_count(1);
-         mm_master_bfm_0.set_command_burst_size(1);
-
-         if (request == REQ_WRITE)begin
-            mm_master_bfm_0.set_command_data(data, 0);      
-         end
-         
-         mm_master_bfm_0.push_command();         
+	 @(posedge CLK);
+	 address_to_access <= ADDRESS;
+	 bytes <= bytess;
+	 rnw <= rnws;	 
+	 if (rnws == WRITE_TRANSACTION) begin
+	    data_to_write <= data;	    
+	 end
+	 start <= 1;
+	 @(posedge CLK);
+	 address_to_access <= $random;
+	 bytes <= $random;
+	 rnw <=  $random;	 
+	 data_to_write <= $random;	    
+	 start <= 0;	 
+	 
       end
-   endtask //
-
-   task bfm_master_pop_response;
-      output [31:0] data;
-      
-      Request_t request;
-      reg [31:0]    addr;      
-      
-      begin
-         mm_master_bfm_0.pop_response();
-         request = Request_t' (mm_master_bfm_0.get_response_request());  
-         addr =  mm_master_bfm_0.get_response_address();
-         data =   mm_master_bfm_0.get_response_data(0);
-         //$display("BFM MASTER POP: Addr 0x%h Data 0x%h @ %d", addr, data, $time);
-      end
-   endtask //
+   endtask // master_transaction
    
-   task avalon_write;
-      input [31:0] address;
-      input [3:0]  byte_enable;
-      input [31:0] data;
-      reg [31:0]   response;
-      begin
-         $display("AVALON WRITE: Address 0x%h Bytes 0x%h Data 0x%h @ %d", address, byte_enable, data, $time);
-         
-         bfm_master_push_command(REQ_WRITE, address, byte_enable, data);
-         repeat (2)  @(posedge  CLK);
-         bfm_master_pop_response(response);      
-      end
-   endtask //
-
-   task avalon_read;
-      input [31:0] address;
-      input [3:0]  byte_enable;
-      input [31:0] expected;
-      reg [31:0]   response;
-      begin
-         bfm_master_push_command(REQ_READ, address, byte_enable, 0);
-         repeat (2)  @(posedge  CLK);
-         bfm_master_pop_response(response); 
-         if (expected !== response) begin
-            $display("AVALON READ FAIL: Addr 0x%h response (0x%h) != expected (0x%h) @ %d", address, response, expected, $time);
-            //SIGNAL FAIL!
-         end else begin
-            $display("AVALON READ: Addr 0x%h response 0x%h @ %d", address, response, $time);
-         end
-      end
-   endtask //
+      
    
    
    //---------------------------------------------------------------------------
@@ -243,76 +193,22 @@ module testbench (/*AUTOARG*/) ;
    
    initial begin
 
+      data_to_write <= 'b0;
+      rnw <= 1'b0;
+      start <= 1'b0;
+      bytes <= 4'b0;
+      address_to_access <= 'b0;
+      
+      
       #5 @(negedge RESET);
       $display("RESET RELEASED @ %d", $time);
 
-      mm_master_bfm_0.init();
-      mm_master_bfm_0.set_clken(1'b1);
-
-      //
-      // 32 bit write/read
-      //
-      avalon_write(32'h0000_0004, 4'hF, 32'hdead_beef);
-      avalon_write(32'h0000_0008, 4'hF, 32'h5555_AA66);
-
-      avalon_read(32'h0000_0004, 4'hF, 32'hdead_beef);
-      avalon_read(32'h0000_0008, 4'hF, 32'h5555_AA66);
-
-      //
-      // 16 bit upper write/read
-      //
-      avalon_write(32'h0000_0004, 4'hC, 32'haaaa_1111);
-      avalon_write(32'h0000_0008, 4'hC, 32'hbbbb_2222);
-
-      avalon_read(32'h0000_0004, 4'hC, 32'haaaa_beef);
-      avalon_read(32'h0000_0008, 4'hC, 32'hbbbb_AA66); 
-
-      //
-      // 16 bit lower write/read
-      //
-      avalon_write(32'h0000_0004, 4'h3, 32'h8888_9999);
-      avalon_write(32'h0000_0008, 4'h3, 32'h7777_6666);
-
-      avalon_read(32'h0000_0004, 4'h3, 32'haaaa_9999);
-      avalon_read(32'h0000_0008, 4'h3, 32'hbbbb_6666);  
-
-
-      //
-      // LSB Write/Read
-      //
-      avalon_write(32'h0000_0004, 4'h1, 32'h8888_9901);
-      avalon_write(32'h0000_0008, 4'h1, 32'h7777_6634);
+      slave.init();
+      repeat (10) @(posedge  CLK);
       
-      avalon_read(32'h0000_0004, 4'h1, 32'haaaa_9901);
-      avalon_read(32'h0000_0008, 4'h1, 32'hbbbb_6634);  
-
-      //
-      // 2nd LSB Write/Read
-      //
-      avalon_write(32'h0000_0004, 4'h2, 32'h8888_1001);
-      avalon_write(32'h0000_0008, 4'h2, 32'h7777_5934);
+      master_transaction(32'h0000_0004, 32'habcd_1234, 4'hF, WRITE);
       
-      avalon_read(32'h0000_0004, 4'h2, 32'haaaa_1001);
-      avalon_read(32'h0000_0008, 4'h2, 32'hbbbb_5934);  
-
-      //
-      // 2nd MSB Write/Read
-      //
-      avalon_write(32'h0000_0004, 4'h4, 32'h8811_1001);
-      avalon_write(32'h0000_0008, 4'h4, 32'h7722_5934);
-      
-      avalon_read(32'h0000_0004, 4'h4, 32'haa11_1001);
-      avalon_read(32'h0000_0008, 4'h4, 32'hbb22_5934);  
-
-      //
-      // MSB Write/Read
-      //
-      avalon_write(32'h0000_0004, 4'h8, 32'h0011_1001);
-      avalon_write(32'h0000_0008, 4'h8, 32'hAC22_5934);
-      
-      avalon_read(32'h0000_0004, 4'h8, 32'h0011_1001);
-      avalon_read(32'h0000_0008, 4'h8, 32'hAC22_5934);  
-      
+   
       
       repeat (10) @(posedge  CLK);
       $display("SIM COMPLETE @ %d", $time);      
