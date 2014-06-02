@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element $${FILENAME}
+   {
+   }
+   element jtag_uart.avalon_jtag_slave
+   {
+      datum baseAddress
+      {
+         value = "135168";
+         type = "long";
+      }
+   }
+   element clk_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element nios2.jtag_debug_module
+   {
+      datum baseAddress
+      {
+         value = "133120";
+         type = "long";
+      }
+   }
+   element jtag_uart
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+   }
+   element nios2
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element ram
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element ram.s1
+   {
+      datum baseAddress
+      {
+         value = "65536";
+         type = "long";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="deviceFamily" value="CYCLONEIII" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="an351_project.qpf" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="1" />
+ <parameter name="timeStamp" value="1307071187467" />
+ <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <module kind="clock_source" version="11.0" enabled="1" name="clk_0">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="true" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module kind="altera_nios2_qsys" version="11.0" enabled="1" name="nios2">
+  <parameter name="setting_showUnpublishedSettings" value="false" />
+  <parameter name="setting_showInternalSettings" value="false" />
+  <parameter name="setting_preciseSlaveAccessErrorException" value="false" />
+  <parameter name="setting_preciseIllegalMemAccessException" value="false" />
+  <parameter name="setting_preciseDivisionErrorException" value="false" />
+  <parameter name="setting_performanceCounter" value="false" />
+  <parameter name="setting_illegalMemAccessDetection" value="false" />
+  <parameter name="setting_illegalInstructionsTrap" value="false" />
+  <parameter name="setting_fullWaveformSignals" value="false" />
+  <parameter name="setting_extraExceptionInfo" value="false" />
+  <parameter name="setting_exportPCB" value="false" />
+  <parameter name="setting_debugSimGen" value="false" />
+  <parameter name="setting_clearXBitsLDNonBypass" value="true" />
+  <parameter name="setting_bit31BypassDCache" value="true" />
+  <parameter name="setting_bigEndian" value="false" />
+  <parameter name="setting_bhtIndexPcOnly" value="false" />
+  <parameter name="setting_avalonDebugPortPresent" value="false" />
+  <parameter name="setting_alwaysEncrypt" value="true" />
+  <parameter name="setting_allowFullAddressRange" value="false" />
+  <parameter name="setting_activateTrace" value="true" />
+  <parameter name="setting_activateTestEndChecker" value="false" />
+  <parameter name="setting_activateMonitors" value="true" />
+  <parameter name="setting_activateModelChecker" value="false" />
+  <parameter name="setting_HDLSimCachesCleared" value="true" />
+  <parameter name="setting_HBreakTest" value="false" />
+  <parameter name="muldiv_divider" value="false" />
+  <parameter name="mpu_useLimit" value="false" />
+  <parameter name="mpu_enabled" value="false" />
+  <parameter name="mmu_enabled" value="false" />
+  <parameter name="mmu_autoAssignTlbPtrSz" value="true" />
+  <parameter name="manuallyAssignCpuID" value="false" />
+  <parameter name="debug_triggerArming" value="true" />
+  <parameter name="debug_embeddedPLL" value="true" />
+  <parameter name="debug_debugReqSignals" value="false" />
+  <parameter name="debug_assignJtagInstanceID" value="false" />
+  <parameter name="dcache_omitDataMaster" value="false" />
+  <parameter name="cpuReset" value="false" />
+  <parameter name="is_hardcopy_compatible" value="false" />
+  <parameter name="setting_shadowRegisterSets" value="0" />
+  <parameter name="mpu_numOfInstRegion" value="8" />
+  <parameter name="mpu_numOfDataRegion" value="8" />
+  <parameter name="mmu_TLBMissExcOffset" value="0" />
+  <parameter name="debug_jtagInstanceID" value="0" />
+  <parameter name="resetOffset" value="0" />
+  <parameter name="exceptionOffset" value="32" />
+  <parameter name="cpuID" value="0" />
+  <parameter name="breakOffset" value="32" />
+  <parameter name="userDefinedSettings" value="" />
+  <parameter name="resetSlave" value="ram.s1" />
+  <parameter name="mmu_TLBMissExcSlave" value="" />
+  <parameter name="exceptionSlave" value="ram.s1" />
+  <parameter name="breakSlave">nios2.jtag_debug_module</parameter>
+  <parameter name="setting_perfCounterWidth" value="32" />
+  <parameter name="setting_interruptControllerType" value="Internal" />
+  <parameter name="setting_branchPredictionType" value="Automatic" />
+  <parameter name="setting_bhtPtrSz" value="8" />
+  <parameter name="muldiv_multiplierType" value="EmbeddedMulFast" />
+  <parameter name="mpu_minInstRegionSize" value="12" />
+  <parameter name="mpu_minDataRegionSize" value="12" />
+  <parameter name="mmu_uitlbNumEntries" value="4" />
+  <parameter name="mmu_udtlbNumEntries" value="6" />
+  <parameter name="mmu_tlbPtrSz" value="7" />
+  <parameter name="mmu_tlbNumWays" value="16" />
+  <parameter name="mmu_processIDNumBits" value="8" />
+  <parameter name="impl" value="Small" />
+  <parameter name="icache_size" value="4096" />
+  <parameter name="icache_ramBlockType" value="Automatic" />
+  <parameter name="icache_numTCIM" value="0" />
+  <parameter name="icache_burstType" value="None" />
+  <parameter name="dcache_bursts" value="false" />
+  <parameter name="debug_level" value="Level1" />
+  <parameter name="debug_OCIOnchipTrace" value="_128" />
+  <parameter name="dcache_size" value="2048" />
+  <parameter name="dcache_ramBlockType" value="Automatic" />
+  <parameter name="dcache_numTCDM" value="0" />
+  <parameter name="dcache_lineSize" value="32" />
+  <parameter name="instAddrWidth" value="18" />
+  <parameter name="dataAddrWidth" value="18" />
+  <parameter name="tightlyCoupledDataMaster0AddrWidth" value="1" />
+  <parameter name="tightlyCoupledDataMaster1AddrWidth" value="1" />
+  <parameter name="tightlyCoupledDataMaster2AddrWidth" value="1" />
+  <parameter name="tightlyCoupledDataMaster3AddrWidth" value="1" />
+  <parameter name="tightlyCoupledInstructionMaster0AddrWidth" value="1" />
+  <parameter name="tightlyCoupledInstructionMaster1AddrWidth" value="1" />
+  <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
+  <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='ram.s1' start='0x10000' end='0x20000' /><slave name='nios2.jtag_debug_module' start='0x20800' end='0x21000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='ram.s1' start='0x10000' end='0x20000' /><slave name='nios2.jtag_debug_module' start='0x20800' end='0x21000' /><slave name='jtag_uart.avalon_jtag_slave' start='0x21000' end='0x21008' /></address-map>]]></parameter>
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="deviceFamilyName" value="Cyclone III" />
+  <parameter name="internalIrqMaskSystemInfo" value="1" />
+  <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
+  <parameter name="deviceFeaturesSystemInfo">M512_MEMORY 0 M4K_MEMORY 0 M9K_MEMORY 1 M20K_MEMORY 0 M144K_MEMORY 0 MRAM_MEMORY 0 MLAB_MEMORY 0 ESB 0 EPCS 1 DSP 0 EMUL 1 HARDCOPY 0 LVDS_IO 0 ADDRESS_STALL 1 TRANSCEIVER_3G_BLOCK 0 TRANSCEIVER_6G_BLOCK 0 DSP_SHIFTER_BLOCK 0</parameter>
+  <parameter name="tightlyCoupledDataMaster0MapParam" value="" />
+  <parameter name="tightlyCoupledDataMaster1MapParam" value="" />
+  <parameter name="tightlyCoupledDataMaster2MapParam" value="" />
+  <parameter name="tightlyCoupledDataMaster3MapParam" value="" />
+  <parameter name="tightlyCoupledInstructionMaster0MapParam" value="" />
+  <parameter name="tightlyCoupledInstructionMaster1MapParam" value="" />
+  <parameter name="tightlyCoupledInstructionMaster2MapParam" value="" />
+  <parameter name="tightlyCoupledInstructionMaster3MapParam" value="" />
+ </module>
+ <module
+   kind="altera_avalon_onchip_memory2"
+   version="11.0"
+   enabled="1"
+   name="ram">
+  <parameter name="allowInSystemMemoryContentEditor" value="false" />
+  <parameter name="autoInitializationFileName" value="ram" />
+  <parameter name="blockType" value="AUTO" />
+  <parameter name="dataWidth" value="32" />
+  <parameter name="deviceFamily" value="Cyclone III" />
+  <parameter name="dualPort" value="false" />
+  <parameter name="initMemContent" value="true" />
+  <parameter name="initializationFileName" value="ram" />
+  <parameter name="instanceID" value="NONE" />
+  <parameter name="memorySize" value="65536" />
+  <parameter name="readDuringWriteMode" value="DONT_CARE" />
+  <parameter name="simAllowMRAMContentsFile" value="false" />
+  <parameter name="simMemInitOnlyFilename" value="0" />
+  <parameter name="singleClockOperation" value="false" />
+  <parameter name="slave1Latency" value="1" />
+  <parameter name="slave2Latency" value="1" />
+  <parameter name="useNonDefaultInitFile" value="false" />
+  <parameter name="useShallowMemBlocks" value="false" />
+  <parameter name="writable" value="true" />
+ </module>
+ <module
+   kind="altera_avalon_jtag_uart"
+   version="11.0"
+   enabled="1"
+   name="jtag_uart">
+  <parameter name="allowMultipleConnections" value="false" />
+  <parameter name="hubInstanceID" value="0" />
+  <parameter name="readBufferDepth" value="64" />
+  <parameter name="readIRQThreshold" value="8" />
+  <parameter name="simInputCharacterStream" value="" />
+  <parameter name="simInteractiveOptions">INTERACTIVE_ASCII_OUTPUT</parameter>
+  <parameter name="useRegistersForReadBuffer" value="false" />
+  <parameter name="useRegistersForWriteBuffer" value="false" />
+  <parameter name="useRelativePathForSimFile" value="false" />
+  <parameter name="writeBufferDepth" value="64" />
+  <parameter name="writeIRQThreshold" value="8" />
+ </module>
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.instruction_master"
+   end="nios2.jtag_debug_module">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00020800" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.data_master"
+   end="nios2.jtag_debug_module">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00020800" />
+ </connection>
+ <connection kind="clock" version="11.0" start="clk_0.clk" end="nios2.clk" />
+ <connection kind="clock" version="11.0" start="clk_0.clk" end="ram.clk1" />
+ <connection kind="clock" version="11.0" start="clk_0.clk" end="jtag_uart.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="nios2.reset_n" />
+ <connection kind="reset" version="11.0" start="clk_0.clk_reset" end="ram.reset1" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="jtag_uart.reset" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.instruction_master"
+   end="ram.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00010000" />
+ </connection>
+ <connection kind="avalon" version="11.0" start="nios2.data_master" end="ram.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00010000" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.data_master"
+   end="jtag_uart.avalon_jtag_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00021000" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="11.0"
+   start="nios2.d_irq"
+   end="jtag_uart.irq">
+  <parameter name="irqNumber" value="0" />
+ </connection>
+</system>
