@@ -79,37 +79,72 @@
  */
 
 #include "alt_types.h"
+#include "sys/alt_irq.h"
 #include "sys/alt_stdio.h"
 #include "altera_avalon_pio_regs.h"
 #include "system.h"
 
 typedef struct{
-	volatile alt_u32 data;
-	volatile alt_u32 direction;
-	volatile alt_u32 interruptmask;
-	volatile alt_u32 edgecapture;
-	volatile alt_u32 outset;
-	volatile alt_u32 outclear;
+    volatile alt_u32 reg1;
+    volatile alt_u32 reg2;
+} CUSTOM_TypeDef;
+
+    
+typedef struct{
+    volatile alt_u32 data;
+    volatile alt_u32 direction;
+    volatile alt_u32 interruptmask;
+    volatile alt_u32 edgecapture;
+    volatile alt_u32 outset;
+    volatile alt_u32 outclear;
 }PIO_REGS_TypeDef;
 
 #define LEDS ((PIO_REGS_TypeDef *) LEDS_BASE)
+#define SWITCHES ((PIO_REGS_TypeDef *) SWITCHES_BASE)
+#define CUSTOM ((CUSTOM_TypeDef *) CUSTOM_SLAVE_BASE)
+
+
+void ISR_SWITCHES(void * isr_context){
+    LEDS->data = 0xFF;
+    SWITCHES->interruptmask = 0x00000000;
+    return;    
+}
+
+void ISR_CUSTOM(void * isr_context){
+    CUSTOM->reg2 = 0;    
+    return;    
+}
+
+
+
 int main()
 { 
+    alt_irq_register (SWITCHES_IRQ, 0, ISR_SWITCHES);
+    alt_irq_register (CUSTOM_SLAVE_IRQ, 0, ISR_CUSTOM);
+    
+    alt_irq_enabled();
+    SWITCHES->interruptmask = 0x00000001;
+    
+    alt_putstr("Hi\n");
+    IOWR_ALTERA_AVALON_PIO_DATA(LEDS_BASE, 0x01);
+    alt_putstr("1\n");
+    IOWR_ALTERA_AVALON_PIO_DATA(LEDS_BASE, 0x00);
+    alt_putstr("2\n");
+    LEDS->data = 0x02;
+    LEDS->data = 0x04;
+    LEDS->data = 0x08;
+    LEDS->data = 0x00;
+    alt_putstr("3\n");
 
+    CUSTOM->reg1 = 0x55;
+    if (CUSTOM->reg1 == 0x55){
+	alt_putstr("4\n");
+	CUSTOM->reg2 = 0xFFFFFFFF;	
+    }
+    alt_putstr("5\n");
 
-  alt_putstr("Hi\n");
-  IOWR_ALTERA_AVALON_PIO_DATA(LEDS_BASE, 0x01);
-  alt_putstr("1\n");
-  IOWR_ALTERA_AVALON_PIO_DATA(LEDS_BASE, 0x00);
-   alt_putstr("2\n");
-   LEDS->data = 0x02;
-   LEDS->data = 0x04;
-   LEDS->data = 0x08;
-   LEDS->data = 0x00;
-   alt_putstr("3\n");
+    /* Event loop never exits. */
+    while (1);
 
-  /* Event loop never exits. */
-  while (1);
-
-  return 0;
+    return 0;
 }
