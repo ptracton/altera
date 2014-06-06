@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element $${FILENAME}
+   {
+   }
+   element clk_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element mm_bridge_0
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element pattern_checker_subsystem
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+   }
+   element pattern_generator_subsystem
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element pattern_reader
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element pattern_writer
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+   }
+   element ram_test_controller
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="deviceFamily" value="CYCLONEIII" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="1" />
+ <parameter name="timeStamp" value="1301793589561" />
+ <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface name="slave" internal="mm_bridge_0.s0" type="avalon" dir="end" />
+ <interface name="write_master" internal="pattern_writer.mm_data" />
+ <interface name="read_master" internal="pattern_reader.mm_data" />
+ <module kind="clock_source" version="11.0" enabled="1" name="clk_0">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="false" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module
+   kind="altera_avalon_mm_bridge"
+   version="11.0"
+   enabled="1"
+   name="mm_bridge_0">
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="SYMBOL_WIDTH" value="8" />
+  <parameter name="ADDRESS_WIDTH" value="13" />
+  <parameter name="ADDRESS_UNITS" value="SYMBOLS" />
+  <parameter name="MAX_BURST_SIZE" value="1" />
+  <parameter name="MAX_PENDING_RESPONSES" value="4" />
+  <parameter name="PIPELINE_COMMAND" value="1" />
+  <parameter name="PIPELINE_RESPONSE" value="1" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone III" />
+ </module>
+ <module
+   name="pattern_generator_subsystem"
+   kind="pattern_generator_system"
+   version="1.0"
+   enabled="1">
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone III" />
+  <parameter name="AUTO_UNIQUE_ID">pattern_generator_subsystem</parameter>
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
+ </module>
+ <module
+   name="pattern_checker_subsystem"
+   kind="pattern_checker_system"
+   version="1.0"
+   enabled="1">
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone III" />
+  <parameter name="AUTO_UNIQUE_ID">pattern_checker_subsystem</parameter>
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
+ </module>
+ <module name="pattern_writer" kind="pattern_writer" version="1.1" enabled="1">
+  <parameter name="MAX_BURST_COUNT" value="2" />
+  <parameter name="LENGTH_WIDTH" value="21" />
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="BURST_REALIGN_ENABLE" value="1" />
+  <parameter name="ADDRESS_WIDTH" value="32" />
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="0" />
+  <parameter name="FIFO_DEPTH" value="128" />
+  <parameter name="BURST_ENABLE" value="1" />
+ </module>
+ <module name="pattern_reader" kind="pattern_reader" version="1.1" enabled="1">
+  <parameter name="MAX_BURST_COUNT" value="2" />
+  <parameter name="LENGTH_WIDTH" value="21" />
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="BURST_REALIGN_ENABLE" value="1" />
+  <parameter name="ADDRESS_WIDTH" value="32" />
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="0" />
+  <parameter name="FIFO_DEPTH" value="128" />
+  <parameter name="BURST_ENABLE" value="1" />
+ </module>
+ <module
+   name="ram_test_controller"
+   kind="ram_test_controller"
+   version="1.1"
+   enabled="1">
+  <parameter name="DEFAULT_BLOCK_SIZE" value="1024" />
+  <parameter name="DEFAULT_TRAIL_DISTANCE" value="1" />
+  <parameter name="DEFAULT_TIMER_RESOLUTION" value="10" />
+  <parameter name="CLOCK_SPEED" value="0" />
+ </module>
+ <connection kind="clock" version="11.0" start="clk_0.clk" end="mm_bridge_0.clk" />
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_0.clk"
+   end="pattern_generator_subsystem.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="pattern_generator_subsystem.reset" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="mm_bridge_0.m0"
+   end="pattern_generator_subsystem.slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="mm_bridge_0.m0"
+   end="pattern_checker_subsystem.slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x1000" />
+ </connection>
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="pattern_checker_subsystem.reset" />
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_0.clk"
+   end="pattern_checker_subsystem.clk" />
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_0.clk"
+   end="pattern_writer.clock" />
+ <connection
+   kind="avalon_streaming"
+   version="11.0"
+   start="pattern_generator_subsystem.st_data_out"
+   end="pattern_writer.st_data" />
+ <connection
+   kind="avalon_streaming"
+   version="11.0"
+   start="pattern_reader.st_data"
+   end="pattern_checker_subsystem.st_data_in" />
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_0.clk"
+   end="pattern_reader.clock" />
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_0.clk"
+   end="ram_test_controller.clock" />
+ <connection
+   kind="avalon_streaming"
+   version="11.0"
+   start="ram_test_controller.write_command"
+   end="pattern_writer.command" />
+ <connection
+   kind="avalon_streaming"
+   version="11.0"
+   start="ram_test_controller.read_command"
+   end="pattern_reader.command" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="mm_bridge_0.m0"
+   end="ram_test_controller.csr">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0800" />
+ </connection>
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="mm_bridge_0.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="pattern_writer.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="pattern_reader.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="ram_test_controller.reset" />
+</system>

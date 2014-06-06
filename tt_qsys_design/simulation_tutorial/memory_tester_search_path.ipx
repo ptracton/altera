@@ -1,0 +1,3 @@
+<library>
+  <path path="../memory_tester_ip/**/*"  />
+</library>

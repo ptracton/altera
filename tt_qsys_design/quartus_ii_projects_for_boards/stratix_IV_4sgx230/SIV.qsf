@@ -1,0 +1,227 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2010 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 10.1 Build 153 11/29/2010 SJ Full Version
+# Date created = 23:17:53  January 31, 2011
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		SIV_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Stratix IV"
+set_global_assignment -name DEVICE EP4SGX230KF40C2
+set_global_assignment -name TOP_LEVEL_ENTITY top_level
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 10.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:17:53  JANUARY 31, 2011"
+set_global_assignment -name LAST_QUARTUS_VERSION 11.0
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+
+
+# DDR SDRAM Interface
+set_location_assignment PIN_D14 -to sdram_dqs
+set_location_assignment PIN_B19 -to sdram_cas_n
+set_location_assignment PIN_C14 -to sdram_dqs_n
+set_location_assignment PIN_C24 -to sdram_ck_n
+set_location_assignment PIN_A25 -to sdram_cke
+set_location_assignment PIN_A24 -to sdram_ras_n
+set_location_assignment PIN_D24 -to sdram_ck
+set_location_assignment PIN_B14 -to sdram_ba[0]
+set_location_assignment PIN_E23 -to sdram_ba[1]
+set_location_assignment PIN_A14 -to sdram_ba[2]
+set_location_assignment PIN_K15 -to sdram_odt
+set_location_assignment PIN_D19 -to sdram_a[0]
+set_location_assignment PIN_C22 -to sdram_a[1]
+set_location_assignment PIN_N19 -to sdram_a[2]
+set_location_assignment PIN_R20 -to sdram_a[3]
+set_location_assignment PIN_D21 -to sdram_a[4]
+set_location_assignment PIN_P19 -to sdram_a[5]
+set_location_assignment PIN_G21 -to sdram_a[6]
+set_location_assignment PIN_M20 -to sdram_a[7]
+set_location_assignment PIN_F21 -to sdram_a[8]
+set_location_assignment PIN_M21 -to sdram_a[9]
+set_location_assignment PIN_B23 -to sdram_a[10]
+set_location_assignment PIN_A19 -to sdram_a[11]
+set_location_assignment PIN_A23 -to sdram_a[12]
+set_location_assignment PIN_D15 -to sdram_cs_n
+set_location_assignment PIN_B11 -to sdram_dm
+set_location_assignment PIN_A10 -to sdram_dq[0]
+set_location_assignment PIN_D11 -to sdram_dq[1]
+set_location_assignment PIN_B10 -to sdram_dq[2]
+set_location_assignment PIN_C12 -to sdram_dq[3]
+set_location_assignment PIN_C11 -to sdram_dq[4]
+set_location_assignment PIN_C13 -to sdram_dq[5]
+set_location_assignment PIN_A11 -to sdram_dq[6]
+set_location_assignment PIN_B13 -to sdram_dq[7]
+set_location_assignment PIN_C19 -to sdram_we_n
+
+
+
+
+# Other I/O on the Host Board
+set_location_assignment PIN_A21 -to clk
+set_instance_assignment -name IO_STANDARD LVDS -to clk
+set_location_assignment PIN_V34 -to reset_n
+set_location_assignment PIN_AF25 -to sdram_oct_rup
+set_location_assignment PIN_AG25 -to sdram_oct_rdn
+
+
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SDC_FILE my_constraints.sdc
+set_global_assignment -name QIP_FILE top_system/synthesis/top_system.qip
+set_global_assignment -name VERILOG_FILE top_level.v
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_dq[0] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to sdram_dq[0] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_dq[0] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_dq[1] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to sdram_dq[1] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_dq[1] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_dq[2] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to sdram_dq[2] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_dq[2] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_dq[3] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to sdram_dq[3] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_dq[3] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_dq[4] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to sdram_dq[4] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_dq[4] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_dq[5] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to sdram_dq[5] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_dq[5] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_dq[6] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to sdram_dq[6] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_dq[6] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_dq[7] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to sdram_dq[7] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_dq[7] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to sdram_dqs -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to sdram_dqs -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_dqs -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to sdram_dqs_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to sdram_dqs_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_dqs_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to sdram_ck -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITHOUT CALIBRATION" -to sdram_ck -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to sdram_ck_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITHOUT CALIBRATION" -to sdram_ck_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_a[0] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_a[0] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_a[10] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_a[10] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_a[11] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_a[11] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_a[12] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_a[12] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_a[1] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_a[1] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_a[2] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_a[2] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_a[3] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_a[3] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_a[4] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_a[4] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_a[5] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_a[5] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_a[6] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_a[6] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_a[7] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_a[7] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_a[8] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_a[8] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_a[9] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_a[9] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_ba[0] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_ba[0] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_ba[1] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_ba[1] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_ba[2] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_ba[2] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_cs_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_cs_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_we_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_we_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_ras_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_ras_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_cas_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_cas_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_cke -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_cke -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_odt -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_odt -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to sdram_dm -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_dm -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name DQ_GROUP 9 -from sdram_dqs -to sdram_dq[0] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name DQ_GROUP 9 -from sdram_dqs -to sdram_dq[1] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name DQ_GROUP 9 -from sdram_dqs -to sdram_dq[2] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name DQ_GROUP 9 -from sdram_dqs -to sdram_dq[3] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name DQ_GROUP 9 -from sdram_dqs -to sdram_dq[4] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name DQ_GROUP 9 -from sdram_dqs -to sdram_dq[5] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name DQ_GROUP 9 -from sdram_dqs -to sdram_dq[6] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name DQ_GROUP 9 -from sdram_dqs -to sdram_dq[7] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name DQ_GROUP 9 -from sdram_dqs -to sdram_dm -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_dq[0] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_dq[1] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_dq[2] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_dq[3] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_dq[4] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_dq[5] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_dq[6] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_dq[7] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_dm -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_dqs -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_dqs_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name GLOBAL_SIGNAL "DUAL-REGIONAL CLOCK" -to the_top_system|sdram|controller_phy_inst|memphy_top_inst|upll_memphy|altpll_component|auto_generated|wire_pll1_clk[1] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name GLOBAL_SIGNAL "DUAL-REGIONAL CLOCK" -to the_top_system|sdram|controller_phy_inst|memphy_top_inst|upll_memphy|altpll_component|auto_generated|wire_pll1_clk[2] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name GLOBAL_SIGNAL "DUAL-REGIONAL CLOCK" -to the_top_system|sdram|controller_phy_inst|memphy_top_inst|upll_memphy|altpll_component|auto_generated|wire_pll1_clk[3] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name GLOBAL_SIGNAL "DUAL-REGIONAL CLOCK" -to the_top_system|sdram|controller_phy_inst|memphy_top_inst|upll_memphy|altpll_component|auto_generated|wire_pll1_clk[5] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name GLOBAL_SIGNAL "DUAL-REGIONAL CLOCK" -to the_top_system|sdram|controller_phy_inst|memphy_top_inst|upll_memphy|altpll_component|auto_generated|wire_pll1_clk[6] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name GLOBAL_SIGNAL OFF -to the_top_system|sdram|controller_phy_inst|memphy_top_inst|umemphy|ureset|phy_reset_mem_stable_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name GLOBAL_SIGNAL OFF -to the_top_system|sdram|controller_phy_inst|memphy_top_inst|umemphy|ureset|phy_reset_n -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name GLOBAL_SIGNAL OFF -to the_top_system|sdram|controller_phy_inst|memphy_top_inst|umemphy|uread_datapath|reset_n_fifo_write_side[0] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name GLOBAL_SIGNAL OFF -to the_top_system|sdram|controller_phy_inst|memphy_top_inst|umemphy|uread_datapath|reset_n_fifo_wraddress[0] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name GLOBAL_SIGNAL OFF -to the_top_system|sdram|controller_phy_inst|memphy_top_inst|umemphy|uread_datapath|read_capture_clk_div2[0] -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name ENABLE_BENEFICIAL_SKEW_OPTIMIZATION_FOR_NON_GLOBAL_CLOCKS ON -to the_top_system|sdram -tag __altera_uniphy_ddr3_c2n25yiq
+set_instance_assignment -name PLL_ENFORCE_USER_PHASE_SHIFT ON -to the_top_system|sdram|controller_phy_inst|memphy_top_inst|upll_memphy|altpll_component|auto_generated|pll1 -tag __altera_uniphy_ddr3_c2n25yiq
+set_global_assignment -name UNIPHY_SEQUENCER_DQS_CONFIG_ENABLE ON
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name UNIPHY_TEMP_VER_CODE 406792570
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name MISC_FILE "C:/Data/Nios/tt_qsys_design/11_0-3-21/boards/stratix_IV_sgx230/SIV.dpf"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

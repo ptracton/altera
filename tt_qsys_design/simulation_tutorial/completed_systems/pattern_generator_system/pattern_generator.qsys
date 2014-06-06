@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element $${FILENAME}
+   {
+   }
+   element pg
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="deviceFamily" value="CYCLONEIII" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName">qsys_sim_tutorial.qpf</parameter>
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="1" />
+ <parameter name="timeStamp" value="1302220122394" />
+ <interface name="pg_reset" internal="pg.reset" type="reset" dir="end" />
+ <interface name="pg_csr" internal="pg.csr" type="avalon" dir="end" />
+ <interface
+   name="pg_pattern_access"
+   internal="pg.pattern_access"
+   type="avalon"
+   dir="end" />
+ <interface
+   name="pg_st_pattern_output"
+   internal="pg.st_pattern_output"
+   type="avalon_streaming"
+   dir="start" />
+ <interface name="pg_clock" internal="pg.clock" type="clock" dir="end" />
+ <module kind="custom_pattern_generator" version="1.1" enabled="1" name="pg">
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="MAX_PATTERN_LENGTH" value="256" />
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="0" />
+ </module>
+</system>

@@ -1,0 +1,362 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2010 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions
+# and other software and tools, and its AMPP partner logic
+# functions, and any output files from any of the foregoing
+# (including device programming or simulation files), and any
+# associated documentation or information are expressly subject
+# to the terms and conditions of the Altera Program License
+# Subscription Agreement, Altera MegaCore Function License
+# Agreement, or other applicable license agreement, including,
+# without limitation, that your use is for the sole purpose of
+# programming logic devices manufactured by Altera and sold by
+# Altera or its authorized distributors.  Please refer to the
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 10.1 
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		ArriaIIGX_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Arria II GX"
+set_global_assignment -name DEVICE EP2AGX125EF35C5
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 10.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:52:49  SEPTEMBER 29, 2010"
+set_global_assignment -name LAST_QUARTUS_VERSION 11.0
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 3
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_location_assignment PIN_AJ19 -to clk
+set_location_assignment PIN_AK19 -to "clk(n)"
+set_location_assignment PIN_AK9 -to reset_n
+set_location_assignment PIN_AH14 -to sdram_mem_addr[0]
+set_location_assignment PIN_AK12 -to sdram_mem_addr[1]
+set_location_assignment PIN_AE12 -to sdram_mem_addr[2]
+set_location_assignment PIN_AH13 -to sdram_mem_addr[3]
+set_location_assignment PIN_AF14 -to sdram_mem_addr[4]
+set_location_assignment PIN_AG12 -to sdram_mem_addr[5]
+set_location_assignment PIN_AJ18 -to sdram_mem_addr[6]
+set_location_assignment PIN_AL19 -to sdram_mem_addr[7]
+set_location_assignment PIN_AG13 -to sdram_mem_addr[8]
+set_location_assignment PIN_AE13 -to sdram_mem_addr[9]
+set_location_assignment PIN_AK10 -to sdram_mem_addr[10]
+set_location_assignment PIN_AH23 -to sdram_mem_addr[11]
+set_location_assignment PIN_AF13 -to sdram_mem_addr[12]
+set_location_assignment PIN_AJ11 -to sdram_mem_ba[0]
+set_location_assignment PIN_AJ13 -to sdram_mem_ba[1]
+set_location_assignment PIN_AE14 -to sdram_mem_ba[2]
+set_location_assignment PIN_AL8 -to sdram_mem_cas_n
+set_location_assignment PIN_AP8 -to sdram_mem_cke
+set_location_assignment PIN_AJ7 -to sdram_mem_clk[0]
+set_location_assignment PIN_AK7 -to sdram_mem_clk_n[0]
+set_location_assignment PIN_AK6 -to sdram_mem_clk[1]
+set_location_assignment PIN_AL6 -to sdram_mem_clk_n[1]
+set_location_assignment PIN_AM13 -to sdram_mem_cs_n
+#set_location_assignment PIN_AL9 -to sdram_mem_cs_n[1]
+set_location_assignment PIN_AK22 -to sdram_mem_dm[0]
+set_location_assignment PIN_AE19 -to sdram_mem_dm[1]
+
+set_location_assignment PIN_AG21 -to sdram_mem_dq[0]
+set_location_assignment PIN_AL29 -to sdram_mem_dq[1]
+set_location_assignment PIN_AM29 -to sdram_mem_dq[2]
+set_location_assignment PIN_AM28 -to sdram_mem_dq[3]
+set_location_assignment PIN_AP29 -to sdram_mem_dq[4]
+set_location_assignment PIN_AN28 -to sdram_mem_dq[5]
+set_location_assignment PIN_AJ24 -to sdram_mem_dq[6]
+set_location_assignment PIN_AJ25 -to sdram_mem_dq[7]
+#set_location_assignment PIN_AP27 -to sdram_mem_dq[8]
+#set_location_assignment PIN_AM24 -to sdram_mem_dq[9]
+#set_location_assignment PIN_AM23 -to sdram_mem_dq[10]
+#set_location_assignment PIN_AP25 -to sdram_mem_dq[11]
+#set_location_assignment PIN_AJ23 -to sdram_mem_dq[12]
+#set_location_assignment PIN_AL24 -to sdram_mem_dq[13]
+#set_location_assignment PIN_AG22 -to sdram_mem_dq[14]
+#set_location_assignment PIN_AH21 -to sdram_mem_dq[15]
+set_location_assignment PIN_AM25 -to sdram_mem_dqs
+#set_location_assignment PIN_AN24 -to sdram_mem_dqs[1]
+set_location_assignment PIN_AM26 -to sdram_mem_dqs_n
+#set_location_assignment PIN_AP24 -to sdram_mem_dqsn[1]
+
+set_location_assignment PIN_AJ10 -to sdram_mem_odt
+set_location_assignment PIN_AH12 -to sdram_mem_ras_n
+set_location_assignment PIN_AM6 -to sdram_mem_we_n
+set_location_assignment PIN_AL26 -to termination_blk0~_rup_pad
+set_location_assignment PIN_AL27 -to termination_blk0~_rdn_pad
+
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_instance_assignment -name IO_STANDARD LVDS -to clk
+set_instance_assignment -name IO_STANDARD "1.8 V" -to reset_n
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_odt
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_odt
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.8-V SSTL CLASS I" -to sdram_mem_clk
+set_instance_assignment -name XSTL_INPUT_ALLOW_SE_BUFFER ON -to sdram_mem_clk
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_clk
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.8-V SSTL CLASS I" -to sdram_mem_clk_n
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_clk_n
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_cs_n
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_cs_n
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_cke
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_cke
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_addr[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_addr[0]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_addr[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_addr[1]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_addr[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_addr[2]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_addr[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_addr[3]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_addr[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_addr[4]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_addr[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_addr[5]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_addr[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_addr[6]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_addr[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_addr[7]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_addr[8]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_addr[8]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_addr[9]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_addr[9]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_addr[10]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_addr[10]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_addr[11]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_addr[11]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_addr[12]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_addr[12]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_ba[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_ba[0]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_ba[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_ba[1]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_ba[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_ba[2]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_ras_n
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_ras_n
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_cas_n
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_cas_n
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_we_n
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to sdram_mem_we_n
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_dq[0]
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_dq[0]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_dq[1]
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_dq[1]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_dq[2]
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_dq[2]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_dq[3]
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_dq[3]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_dq[4]
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_dq[4]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_dq[5]
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_dq[5]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_dq[6]
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_dq[6]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_dq[7]
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_dq[7]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.8-V SSTL CLASS I" -to sdram_mem_dqs
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_dqs
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.8-V SSTL CLASS I" -to sdram_mem_dqs_n
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_dqs_n
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_dm[0]
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_dm[0]
+set_instance_assignment -name IO_STANDARD "SSTL-18 CLASS I" -to sdram_mem_dm[1]
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to sdram_mem_dm[1]
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_mem_dq[0]
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_mem_dq[1]
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_mem_dq[2]
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_mem_dq[3]
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_mem_dq[4]
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_mem_dq[5]
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_mem_dq[6]
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_mem_dq[7]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 877632041 -to sdram_mem_dq[0]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 877632041 -to sdram_mem_dq[1]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 877632041 -to sdram_mem_dq[2]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 877632041 -to sdram_mem_dq[3]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 877632041 -to sdram_mem_dq[4]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 877632041 -to sdram_mem_dq[5]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 877632041 -to sdram_mem_dq[6]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 877632041 -to sdram_mem_dq[7]
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_mem_dqs
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 877632041 -to sdram_mem_dqs
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_mem_dqs_n
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 877632041 -to sdram_mem_dqs_n
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_mem_dm
+set_instance_assignment -name MEM_INTERFACE_DELAY_CHAIN_CONFIG FLEXIBLE_TIMING -to sdram_mem_dm[1]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 877632041 -to sdram_mem_dm[0]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 877632041 -to sdram_mem_dm[1]
+set_instance_assignment -name DQ_GROUP 9 -from sdram_mem_dqs -to sdram_mem_dq[0]
+set_instance_assignment -name DQ_GROUP 9 -from sdram_mem_dqs -to sdram_mem_dq[1]
+set_instance_assignment -name DQ_GROUP 9 -from sdram_mem_dqs -to sdram_mem_dq[2]
+set_instance_assignment -name DQ_GROUP 9 -from sdram_mem_dqs -to sdram_mem_dq[3]
+set_instance_assignment -name DQ_GROUP 9 -from sdram_mem_dqs -to sdram_mem_dq[4]
+set_instance_assignment -name DQ_GROUP 9 -from sdram_mem_dqs -to sdram_mem_dq[5]
+set_instance_assignment -name DQ_GROUP 9 -from sdram_mem_dqs -to sdram_mem_dq[6]
+set_instance_assignment -name DQ_GROUP 9 -from sdram_mem_dqs -to sdram_mem_dq[7]
+set_instance_assignment -name DQ_GROUP 9 -from sdram_mem_dqs -to sdram_mem_dm[0]
+set_instance_assignment -name DQSB_DQS_PAIR ON -from sdram_mem_dqs_n -to sdram_mem_dqs
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name QIP_FILE top_system/synthesis/top_system.qip
+set_global_assignment -name VERILOG_FILE top_system/synthesis/top_system.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_onchip_ram.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SOURCE_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_onchip_ram.hex -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_jtag_uart.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SOURCE_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_jtag_uart_input_mutex.dat -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SOURCE_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_jtag_uart_output_stream.dat -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SOURCE_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_jtag_uart_input_stream.dat -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_cpu_jtag_debug_module_sysclk.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SDC_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_cpu.sdc -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SOURCE_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_cpu_rf_ram_a.mif -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SOURCE_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_cpu_ociram_default_contents.mif -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SOURCE_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_cpu_rf_ram_b.mif -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_cpu_jtag_debug_module_tck.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_cpu_jtag_debug_module_wrapper.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_cpu_test_bench.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_cpu_oci_test_bench.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_cpu.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/altera_avalon_mm_bridge.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/altera_merlin_master_translator.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/altera_merlin_slave_translator.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/altera_merlin_master_agent.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/altera_merlin_slave_agent.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/altera_avalon_sc_fifo.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_addr_router.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_addr_router_001.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_id_router.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_id_router_002.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/altera_merlin_traffic_limiter.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/altera_avalon_st_pipeline_base.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/altera_reset_controller.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/altera_reset_synchronizer.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SDC_FILE top_system/synthesis/submodules/altera_reset_controller.sdc -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_cmd_xbar_demux.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_cmd_xbar_demux_001.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/altera_merlin_arbitrator.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_cmd_xbar_mux.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_rsp_xbar_demux_002.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_rsp_xbar_mux.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_rsp_xbar_mux_001.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/altera_avalon_dc_fifo.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/altera_dcfifo_synchronizer_bundle.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SDC_FILE top_system/synthesis/submodules/altera_avalon_dc_fifo.sdc -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/altera_avalon_st_pipeline_stage.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_cpu_subsystem_irq_mapper.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_pattern_generator_subsystem.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/mtm_custom_pattern_generator.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/mtm_prbs_pattern_generator.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/mtm_two_to_one_st_mux.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_pattern_generator_subsystem_timing_adapter.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_pattern_generator_subsystem_timing_adapter_fifo.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_pattern_generator_subsystem_timing_adapter_1.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_pattern_generator_subsystem_timing_adapter_1_fifo.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_pattern_generator_subsystem_addr_router.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_pattern_generator_subsystem_id_router.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_pattern_generator_subsystem_cmd_xbar_demux.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_pattern_generator_subsystem_rsp_xbar_demux.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_pattern_generator_subsystem_rsp_xbar_mux.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_pattern_checker_subsystem.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/mtm_one_to_two_st_demux.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/mtm_custom_pattern_checker.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/mtm_prbs_pattern_checker.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_pattern_checker_subsystem_addr_router.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/mtm_pattern_writer.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/mtm_pattern_reader.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/mtm_ram_test_controller.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/mtm_chopper_fsm.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_addr_router.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_id_router.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_cmd_xbar_demux.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_rsp_xbar_demux.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_memory_tester_subsystem_rsp_xbar_mux.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_register_control.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_sdram_phy_alt_mem_phy.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name TCL_SCRIPT_FILE top_system/synthesis/submodules/top_system_sdram_phy_report_timing.tcl -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_sdram_example_driver.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_sdram.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_sdram_example_top.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_ecc_decoder_64_syn.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_phy_defines.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SDC_FILE top_system/synthesis/submodules/top_system_sdram_example_top.sdc -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_list.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_sdram_mem_model.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_mm_st_converter.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_cmd_gen.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_addr_cmd_wrap.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_addr_cmd.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_dataid_manager.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_rdwr_data_tmg.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_sideband.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name TCL_SCRIPT_FILE top_system/synthesis/submodules/top_system_sdram_phy_ddr_pins.tcl -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_timing_param.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SOURCE_FILE top_system/synthesis/submodules/alt_mem_ddrx_define.iv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_sdram_phy_alt_mem_phy_pll.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name TCL_SCRIPT_FILE top_system/synthesis/submodules/top_system_sdram_pin_assignments.tcl -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_sdram_phy.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_rdata_path.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_sdram_phy_alt_mem_phy_dq_dqs.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_buffer_manager.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_sdram_ex_lfsr8.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name TCL_SCRIPT_FILE top_system/synthesis/submodules/top_system_sdram_phy_report_timing_core.tcl -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_sdram_controller_phy.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_ecc_encoder_64_syn.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_controller_st_top.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_lpddr2_addr_cmd.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_ecc_encoder.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_fifo.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_rank_timer.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name TCL_SCRIPT_FILE top_system/synthesis/submodules/top_system_sdram_phy_ddr_timing.tcl -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SDC_FILE top_system/synthesis/submodules/top_system_sdram_phy_ddr_timing.sdc -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_tbp.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_ddr2_odt_gen.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_sdram_phy_alt_mem_phy_seq_wrapper.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_burst_tracking.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_wdata_path.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_burst_gen.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_buffer.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_controller.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_odt_gen.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_sdram_alt_mem_ddrx_controller_top.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_ecc_decoder.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_ecc_encoder_32_syn.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_ddr3_odt_gen.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/top_system_sdram_full_mem_model.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VHDL_FILE top_system/synthesis/submodules/top_system_sdram_phy_alt_mem_phy_seq.vhd -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_ecc_encoder_decoder_wrapper.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_input_if.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_arbiter.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name VERILOG_FILE top_system/synthesis/submodules/alt_mem_ddrx_ecc_decoder_32_syn.v -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_addr_router.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_id_router.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_cmd_xbar_demux.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_cmd_xbar_mux.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SYSTEMVERILOG_FILE top_system/synthesis/submodules/top_system_rsp_xbar_demux.sv -qip top_system/synthesis/top_system.qip -library lib_top_system
+set_global_assignment -name SOPC_BUILDER_SIGNATURE_ID IPDS -qip top_system/synthesis/top_system.qip
+set_global_assignment -name SDC_FILE my_constraints.sdc
+set_global_assignment -name VERILOG_FILE top_level.v
+set_global_assignment -name MISC_FILE "/apps2/home/users/jstephen/Qsys_tutorial_design_files/11_0-3-22/boards/arria_II_2agx125/ArriaIIGX.dpf"
+set_global_assignment -name TOP_LEVEL_ENTITY top_level
+####
+set_global_assignment -name TEXT_FILE asmio_IE.txt
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

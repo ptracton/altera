@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element clk_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element two_to_one_st_mux.csr
+   {
+      datum baseAddress
+      {
+         value = "1088";
+         type = "long";
+      }
+   }
+   element prbs_pattern_generator.csr
+   {
+      datum baseAddress
+      {
+         value = "1056";
+         type = "long";
+      }
+   }
+   element custom_pattern_generator.csr
+   {
+      datum baseAddress
+      {
+         value = "1024";
+         type = "long";
+      }
+   }
+   element custom_pattern_generator
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element mm_bridge_0
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element custom_pattern_generator.pattern_access
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "long";
+      }
+   }
+   element prbs_pattern_generator
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+   }
+   element timing_adapter
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+   }
+   element timing_adapter_1
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element two_to_one_st_mux
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="deviceFamily" value="CYCLONEIII" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="1" />
+ <parameter name="timeStamp" value="1298169823865" />
+ <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface name="slave" internal="mm_bridge_0.s0" type="avalon" dir="end" />
+ <interface
+   name="st_data_out"
+   internal="two_to_one_st_mux.st_output"
+   type="avalon_streaming"
+   dir="start" />
+ <module kind="clock_source" version="11.0" enabled="1" name="clk_0">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="false" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module
+   kind="altera_avalon_mm_bridge"
+   version="11.0"
+   enabled="1"
+   name="mm_bridge_0">
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="SYMBOL_WIDTH" value="8" />
+  <parameter name="ADDRESS_WIDTH" value="11" />
+  <parameter name="ADDRESS_UNITS" value="SYMBOLS" />
+  <parameter name="MAX_BURST_SIZE" value="1" />
+  <parameter name="MAX_PENDING_RESPONSES" value="4" />
+  <parameter name="PIPELINE_COMMAND" value="1" />
+  <parameter name="PIPELINE_RESPONSE" value="1" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+ </module>
+ <module
+   kind="custom_pattern_generator"
+   version="1.1"
+   enabled="1"
+   name="custom_pattern_generator">
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="MAX_PATTERN_LENGTH" value="256" />
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="0" />
+ </module>
+ <module
+   kind="prbs_pattern_generator"
+   version="1.1"
+   enabled="1"
+   name="prbs_pattern_generator">
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="0" />
+ </module>
+ <module
+   kind="two_to_one_st_mux"
+   version="1.1"
+   enabled="1"
+   name="two_to_one_st_mux">
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="0" />
+ </module>
+ <module
+   kind="timing_adapter"
+   version="11.0"
+   enabled="1"
+   name="timing_adapter">
+  <parameter name="generationLanguage" value="VERILOG" />
+  <parameter name="inBitsPerSymbol" value="8" />
+  <parameter name="inChannelWidth" value="0" />
+  <parameter name="inErrorDescriptor" value="" />
+  <parameter name="inErrorWidth" value="0" />
+  <parameter name="inMaxChannel" value="0" />
+  <parameter name="inReadyLatency" value="3" />
+  <parameter name="inSymbolsPerBeat" value="4" />
+  <parameter name="inUseEmpty" value="false" />
+  <parameter name="inUseEmptyPort" value="NO" />
+  <parameter name="inUsePackets" value="false" />
+  <parameter name="inUseReady" value="true" />
+  <parameter name="inUseValid" value="true" />
+  <parameter name="moduleName" value="" />
+  <parameter name="outReadyLatency" value="0" />
+  <parameter name="outUseReady" value="true" />
+  <parameter name="outUseValid" value="true" />
+ </module>
+ <module
+   kind="timing_adapter"
+   version="11.0"
+   enabled="1"
+   name="timing_adapter_1">
+  <parameter name="generationLanguage" value="VERILOG" />
+  <parameter name="inBitsPerSymbol" value="8" />
+  <parameter name="inChannelWidth" value="0" />
+  <parameter name="inErrorDescriptor" value="" />
+  <parameter name="inErrorWidth" value="0" />
+  <parameter name="inMaxChannel" value="0" />
+  <parameter name="inReadyLatency" value="1" />
+  <parameter name="inSymbolsPerBeat" value="4" />
+  <parameter name="inUseEmpty" value="false" />
+  <parameter name="inUseEmptyPort" value="NO" />
+  <parameter name="inUsePackets" value="false" />
+  <parameter name="inUseReady" value="true" />
+  <parameter name="inUseValid" value="true" />
+  <parameter name="moduleName" value="" />
+  <parameter name="outReadyLatency" value="0" />
+  <parameter name="outUseReady" value="true" />
+  <parameter name="outUseValid" value="true" />
+ </module>
+ <connection kind="clock" version="11.0" start="clk_0.clk" end="mm_bridge_0.clk" />
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_0.clk"
+   end="custom_pattern_generator.clock" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="mm_bridge_0.m0"
+   end="custom_pattern_generator.csr">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0400" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="mm_bridge_0.m0"
+   end="custom_pattern_generator.pattern_access">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+ </connection>
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_0.clk"
+   end="prbs_pattern_generator.clock" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="mm_bridge_0.m0"
+   end="prbs_pattern_generator.csr">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0420" />
+ </connection>
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_0.clk"
+   end="two_to_one_st_mux.clock" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="mm_bridge_0.m0"
+   end="two_to_one_st_mux.csr">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0440" />
+ </connection>
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="mm_bridge_0.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="custom_pattern_generator.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="prbs_pattern_generator.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="two_to_one_st_mux.reset" />
+ <connection
+   kind="avalon_streaming"
+   version="11.0"
+   start="custom_pattern_generator.st_pattern_output"
+   end="timing_adapter.in" />
+ <connection
+   kind="avalon_streaming"
+   version="11.0"
+   start="timing_adapter.out"
+   end="two_to_one_st_mux.st_input_A" />
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_0.clk"
+   end="timing_adapter.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="timing_adapter.reset" />
+ <connection
+   kind="avalon_streaming"
+   version="11.0"
+   start="prbs_pattern_generator.st_pattern_output"
+   end="timing_adapter_1.in" />
+ <connection
+   kind="avalon_streaming"
+   version="11.0"
+   start="timing_adapter_1.out"
+   end="two_to_one_st_mux.st_input_B" />
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_0.clk"
+   end="timing_adapter_1.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="timing_adapter_1.reset" />
+</system>

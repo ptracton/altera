@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element clk_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element prbs_pattern_checker.csr
+   {
+      datum baseAddress
+      {
+         value = "1088";
+         type = "long";
+      }
+   }
+   element one_to_two_st_demux.csr
+   {
+      datum baseAddress
+      {
+         value = "1024";
+         type = "long";
+      }
+   }
+   element custom_pattern_checker
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+   }
+   element mm_bridge_0
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element one_to_two_st_demux
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element prbs_pattern_checker
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="deviceFamily" value="CYCLONEIII" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="1" />
+ <parameter name="timeStamp" value="1298171575187" />
+ <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface name="slave" internal="mm_bridge_0.s0" type="avalon" dir="end" />
+ <interface
+   name="st_data_in"
+   internal="one_to_two_st_demux.st_input"
+   type="avalon_streaming"
+   dir="end" />
+ <module kind="clock_source" version="11.0" enabled="1" name="clk_0">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="false" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module
+   kind="altera_avalon_mm_bridge"
+   version="11.0"
+   enabled="1"
+   name="mm_bridge_0">
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="SYMBOL_WIDTH" value="8" />
+  <parameter name="ADDRESS_WIDTH" value="11" />
+  <parameter name="ADDRESS_UNITS" value="SYMBOLS" />
+  <parameter name="MAX_BURST_SIZE" value="1" />
+  <parameter name="MAX_PENDING_RESPONSES" value="4" />
+  <parameter name="PIPELINE_COMMAND" value="1" />
+  <parameter name="PIPELINE_RESPONSE" value="1" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+ </module>
+ <module
+   kind="one_to_two_st_demux"
+   version="1.1"
+   enabled="1"
+   name="one_to_two_st_demux">
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="0" />
+ </module>
+ <module
+   kind="custom_pattern_checker"
+   version="1.1"
+   enabled="1"
+   name="custom_pattern_checker">
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="MAX_PATTERN_LENGTH" value="256" />
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="0" />
+ </module>
+ <module
+   kind="prbs_pattern_checker"
+   version="1.1"
+   enabled="1"
+   name="prbs_pattern_checker">
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="0" />
+ </module>
+ <connection kind="clock" version="11.0" start="clk_0.clk" end="mm_bridge_0.clk" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="mm_bridge_0.m0"
+   end="one_to_two_st_demux.csr">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0400" />
+ </connection>
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_0.clk"
+   end="custom_pattern_checker.clock" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="mm_bridge_0.m0"
+   end="custom_pattern_checker.csr">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0420" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="mm_bridge_0.m0"
+   end="custom_pattern_checker.pattern_access">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+ </connection>
+ <connection
+   kind="avalon_streaming"
+   version="11.0"
+   start="one_to_two_st_demux.st_output_A"
+   end="custom_pattern_checker.st_pattern_input" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="mm_bridge_0.m0"
+   end="prbs_pattern_checker.csr">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0440" />
+ </connection>
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_0.clk"
+   end="prbs_pattern_checker.clock" />
+ <connection
+   kind="avalon_streaming"
+   version="11.0"
+   start="one_to_two_st_demux.st_output_B"
+   end="prbs_pattern_checker.st_pattern_input" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="mm_bridge_0.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="one_to_two_st_demux.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="custom_pattern_checker.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_0.clk_reset"
+   end="prbs_pattern_checker.reset" />
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_0.clk"
+   end="one_to_two_st_demux.clock" />
+</system>

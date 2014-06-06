@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element $${FILENAME}
+   {
+   }
+   element DUT
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element clock_source
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element csr_master
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+   }
+   element pattern_master
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+   }
+   element pattern_sink
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element reset_source
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="deviceFamily" value="CYCLONEIII" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="1" />
+ <parameter name="timeStamp" value="1301787600137" />
+ <module kind="pattern_generator" version="1.0" enabled="1" name="DUT">
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_UNIQUE_ID" value="DUT" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone III" />
+  <parameter name="AUTO_PG_CLOCK_CLOCK_RATE" value="0" />
+  <parameter name="AUTO_PG_CLOCK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_PG_CLOCK_RESET_DOMAIN" value="1" />
+ </module>
+ <module
+   kind="altera_avalon_clock_source"
+   version="11.0"
+   enabled="1"
+   name="clock_source">
+  <parameter name="CLOCK_RATE" value="50" />
+ </module>
+ <module
+   kind="altera_avalon_reset_source"
+   version="11.0"
+   enabled="1"
+   name="reset_source">
+  <parameter name="ASSERT_HIGH_RESET" value="1" />
+  <parameter name="INITIAL_RESET_CYCLES" value="50" />
+ </module>
+ <module
+   kind="altera_avalon_mm_master_bfm"
+   version="11.0"
+   enabled="1"
+   name="csr_master">
+  <parameter name="AV_ADDRESS_W" value="2" />
+  <parameter name="AV_SYMBOL_W" value="8" />
+  <parameter name="AV_NUMSYMBOLS" value="4" />
+  <parameter name="AV_BURSTCOUNT_W" value="1" />
+  <parameter name="AV_READRESPONSE_W" value="1" />
+  <parameter name="AV_WRITERESPONSE_W" value="1" />
+  <parameter name="USE_READ" value="1" />
+  <parameter name="USE_WRITE" value="1" />
+  <parameter name="USE_ADDRESS" value="1" />
+  <parameter name="USE_BYTE_ENABLE" value="1" />
+  <parameter name="USE_BURSTCOUNT" value="0" />
+  <parameter name="USE_READ_DATA" value="1" />
+  <parameter name="USE_READ_DATA_VALID" value="0" />
+  <parameter name="USE_WRITE_DATA" value="1" />
+  <parameter name="USE_BEGIN_TRANSFER" value="0" />
+  <parameter name="USE_BEGIN_BURST_TRANSFER" value="0" />
+  <parameter name="USE_ARBITERLOCK" value="0" />
+  <parameter name="USE_LOCK" value="0" />
+  <parameter name="USE_DEBUGACCESS" value="0" />
+  <parameter name="USE_WAIT_REQUEST" value="0" />
+  <parameter name="USE_TRANSACTIONID" value="0" />
+  <parameter name="USE_WRITERESPONSE" value="0" />
+  <parameter name="USE_READRESPONSE" value="0" />
+  <parameter name="USE_CLKEN" value="0" />
+  <parameter name="ASSERT_HIGH_RESET" value="1" />
+  <parameter name="ASSERT_HIGH_WAITREQUEST" value="1" />
+  <parameter name="ASSERT_HIGH_READ" value="1" />
+  <parameter name="ASSERT_HIGH_WRITE" value="1" />
+  <parameter name="ASSERT_HIGH_BYTEENABLE" value="1" />
+  <parameter name="ASSERT_HIGH_READDATAVALID" value="1" />
+  <parameter name="ASSERT_HIGH_ARBITERLOCK" value="1" />
+  <parameter name="ASSERT_HIGH_LOCK" value="1" />
+  <parameter name="AV_BURST_LINEWRAP" value="0" />
+  <parameter name="AV_BURST_BNDR_ONLY" value="0" />
+  <parameter name="AV_MAX_PENDING_READS" value="0" />
+  <parameter name="AV_FIX_READ_LATENCY" value="1" />
+  <parameter name="AV_READ_WAIT_TIME" value="0" />
+  <parameter name="AV_WRITE_WAIT_TIME" value="0" />
+  <parameter name="REGISTER_WAITREQUEST" value="0" />
+  <parameter name="AV_REGISTERINCOMINGSIGNALS" value="0" />
+  <parameter name="ADDRESS_UNITS" value="WORDS" />
+ </module>
+ <module
+   kind="altera_avalon_mm_master_bfm"
+   version="11.0"
+   enabled="1"
+   name="pattern_master">
+  <parameter name="AV_ADDRESS_W" value="8" />
+  <parameter name="AV_SYMBOL_W" value="8" />
+  <parameter name="AV_NUMSYMBOLS" value="4" />
+  <parameter name="AV_BURSTCOUNT_W" value="1" />
+  <parameter name="AV_READRESPONSE_W" value="1" />
+  <parameter name="AV_WRITERESPONSE_W" value="1" />
+  <parameter name="USE_READ" value="0" />
+  <parameter name="USE_WRITE" value="1" />
+  <parameter name="USE_ADDRESS" value="1" />
+  <parameter name="USE_BYTE_ENABLE" value="1" />
+  <parameter name="USE_BURSTCOUNT" value="0" />
+  <parameter name="USE_READ_DATA" value="0" />
+  <parameter name="USE_READ_DATA_VALID" value="0" />
+  <parameter name="USE_WRITE_DATA" value="1" />
+  <parameter name="USE_BEGIN_TRANSFER" value="0" />
+  <parameter name="USE_BEGIN_BURST_TRANSFER" value="0" />
+  <parameter name="USE_ARBITERLOCK" value="0" />
+  <parameter name="USE_LOCK" value="0" />
+  <parameter name="USE_DEBUGACCESS" value="0" />
+  <parameter name="USE_WAIT_REQUEST" value="0" />
+  <parameter name="USE_TRANSACTIONID" value="0" />
+  <parameter name="USE_WRITERESPONSE" value="0" />
+  <parameter name="USE_READRESPONSE" value="0" />
+  <parameter name="USE_CLKEN" value="0" />
+  <parameter name="ASSERT_HIGH_RESET" value="1" />
+  <parameter name="ASSERT_HIGH_WAITREQUEST" value="1" />
+  <parameter name="ASSERT_HIGH_READ" value="1" />
+  <parameter name="ASSERT_HIGH_WRITE" value="1" />
+  <parameter name="ASSERT_HIGH_BYTEENABLE" value="1" />
+  <parameter name="ASSERT_HIGH_READDATAVALID" value="1" />
+  <parameter name="ASSERT_HIGH_ARBITERLOCK" value="1" />
+  <parameter name="ASSERT_HIGH_LOCK" value="1" />
+  <parameter name="AV_BURST_LINEWRAP" value="0" />
+  <parameter name="AV_BURST_BNDR_ONLY" value="0" />
+  <parameter name="AV_MAX_PENDING_READS" value="0" />
+  <parameter name="AV_FIX_READ_LATENCY" value="0" />
+  <parameter name="AV_READ_WAIT_TIME" value="1" />
+  <parameter name="AV_WRITE_WAIT_TIME" value="0" />
+  <parameter name="REGISTER_WAITREQUEST" value="0" />
+  <parameter name="AV_REGISTERINCOMINGSIGNALS" value="0" />
+  <parameter name="ADDRESS_UNITS" value="WORDS" />
+ </module>
+ <module
+   kind="altera_avalon_st_sink_bfm"
+   version="11.0"
+   enabled="1"
+   name="pattern_sink">
+  <parameter name="USE_PACKET" value="0" />
+  <parameter name="USE_CHANNEL" value="0" />
+  <parameter name="USE_ERROR" value="0" />
+  <parameter name="USE_READY" value="1" />
+  <parameter name="USE_VALID" value="1" />
+  <parameter name="USE_EMPTY" value="0" />
+  <parameter name="ST_SYMBOL_W" value="8" />
+  <parameter name="ST_NUMSYMBOLS" value="4" />
+  <parameter name="ST_CHANNEL_W" value="1" />
+  <parameter name="ST_ERROR_W" value="1" />
+  <parameter name="ST_READY_LATENCY" value="3" />
+  <parameter name="ST_BEATSPERCYCLE" value="1" />
+  <parameter name="ST_MAX_CHANNELS" value="0" />
+ </module>
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clock_source.clk"
+   end="DUT.pg_clock" />
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clock_source.clk"
+   end="reset_source.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="reset_source.reset"
+   end="DUT.pg_reset" />
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clock_source.clk"
+   end="csr_master.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="reset_source.reset"
+   end="csr_master.clk_reset" />
+ <connection kind="avalon" version="11.0" start="csr_master.m0" end="DUT.pg_csr">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+ </connection>
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clock_source.clk"
+   end="pattern_master.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="reset_source.reset"
+   end="pattern_master.clk_reset" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="pattern_master.m0"
+   end="DUT.pg_pattern_access">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+ </connection>
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clock_source.clk"
+   end="pattern_sink.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="reset_source.reset"
+   end="pattern_sink.clk_reset" />
+ <connection
+   kind="avalon_streaming"
+   version="11.0"
+   start="DUT.pg_st_pattern_output"
+   end="pattern_sink.sink" />
+</system>
