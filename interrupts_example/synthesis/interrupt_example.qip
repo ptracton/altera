@@ -1,0 +1,127 @@
+set_global_assignment -entity "interrupt_example" -library "interrupt_example" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "interrupt_example" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "interrupt_example" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../qsys/interrupt_example.sopcinfo"]
+set_global_assignment -entity "interrupt_example" -library "interrupt_example" -name SLD_INFO "QSYS_NAME interrupt_example HAS_SOPCINFO 1 GENERATION_ID 1402077304"
+set_global_assignment -library "interrupt_example" -name MISC_FILE [file join $::quartus(qip_path) "../qsys/interrupt_example.cmp"]
+set_global_assignment -library "interrupt_example" -name SLD_FILE [file join $::quartus(qip_path) "interrupt_example.regmap"]
+set_global_assignment -library "interrupt_example" -name SLD_FILE [file join $::quartus(qip_path) "interrupt_example.debuginfo"]
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "interrupt_example" -name MISC_FILE [file join $::quartus(qip_path) "../qsys/interrupt_example.qsys"]
+
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "interrupt_example.v"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.v"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_synchronizer.v"]
+set_global_assignment -library "interrupt_example" -name SDC_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.sdc"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_irq_mapper.sv"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_mm_interconnect_0.v"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_arbitrator.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_mm_interconnect_0_rsp_xbar_mux_001.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_mm_interconnect_0_rsp_xbar_mux.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_mm_interconnect_0_rsp_xbar_demux_003.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_mm_interconnect_0_rsp_xbar_demux.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_mm_interconnect_0_cmd_xbar_mux_003.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_mm_interconnect_0_cmd_xbar_mux.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_mm_interconnect_0_cmd_xbar_demux_001.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_mm_interconnect_0_cmd_xbar_demux.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_mm_interconnect_0_id_router_003.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_mm_interconnect_0_id_router.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_mm_interconnect_0_addr_router_001.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_mm_interconnect_0_addr_router.sv"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_avalon_sc_fifo.v"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_agent.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_burst_uncompressor.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_agent.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_translator.sv"]
+set_global_assignment -library "interrupt_example" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_SWITCHES.v"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_LEDS.v"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_JTAG_UART.v"]
+set_global_assignment -library "interrupt_example" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_MEMORY.hex"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_MEMORY.v"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_CPU.v"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_CPU_jtag_debug_module_sysclk.v"]
+set_global_assignment -library "interrupt_example" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_CPU_rf_ram_b.mif"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_CPU_oci_test_bench.v"]
+set_global_assignment -library "interrupt_example" -name SDC_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_CPU.sdc"]
+set_global_assignment -library "interrupt_example" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_CPU_rf_ram_a.mif"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_CPU_jtag_debug_module_tck.v"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_CPU_jtag_debug_module_wrapper.v"]
+set_global_assignment -library "interrupt_example" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_CPU_test_bench.v"]
+set_global_assignment -library "interrupt_example" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/interrupt_example_CPU_ociram_default_contents.mif"]
+
+set_global_assignment -entity "altera_reset_controller" -library "interrupt_example" -name IP_TOOL_NAME "altera_reset_controller"
+set_global_assignment -entity "altera_reset_controller" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "altera_reset_controller" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_irq_mapper" -library "interrupt_example" -name IP_TOOL_NAME "altera_irq_mapper"
+set_global_assignment -entity "interrupt_example_irq_mapper" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_irq_mapper" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_interconnect_wrapper"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_rsp_xbar_mux_001" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_rsp_xbar_mux_001" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_rsp_xbar_mux_001" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_rsp_xbar_mux" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_rsp_xbar_mux" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_rsp_xbar_mux" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_rsp_xbar_demux_003" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_rsp_xbar_demux_003" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_rsp_xbar_demux_003" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_rsp_xbar_demux" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_rsp_xbar_demux" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_rsp_xbar_demux" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_cmd_xbar_mux_003" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_cmd_xbar_mux_003" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_cmd_xbar_mux_003" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_cmd_xbar_mux" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_cmd_xbar_mux" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_cmd_xbar_mux" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_cmd_xbar_demux_001" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_cmd_xbar_demux_001" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_cmd_xbar_demux_001" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_cmd_xbar_demux" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_cmd_xbar_demux" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_cmd_xbar_demux" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_id_router_003" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_id_router_003" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_id_router_003" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_id_router" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_id_router" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_id_router" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_addr_router_001" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_addr_router_001" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_addr_router_001" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_addr_router" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_addr_router" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_mm_interconnect_0_addr_router" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "interrupt_example" -name IP_TOOL_NAME "altera_avalon_sc_fifo"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_slave_agent"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_master_agent" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_master_agent"
+set_global_assignment -entity "altera_merlin_master_agent" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "altera_merlin_master_agent" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_slave_translator"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_master_translator" -library "interrupt_example" -name IP_TOOL_NAME "altera_merlin_master_translator"
+set_global_assignment -entity "altera_merlin_master_translator" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "altera_merlin_master_translator" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_SWITCHES" -library "interrupt_example" -name IP_TOOL_NAME "altera_avalon_pio"
+set_global_assignment -entity "interrupt_example_SWITCHES" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_SWITCHES" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_LEDS" -library "interrupt_example" -name IP_TOOL_NAME "altera_avalon_pio"
+set_global_assignment -entity "interrupt_example_LEDS" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_LEDS" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_JTAG_UART" -library "interrupt_example" -name IP_TOOL_NAME "altera_avalon_jtag_uart"
+set_global_assignment -entity "interrupt_example_JTAG_UART" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_JTAG_UART" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_MEMORY" -library "interrupt_example" -name IP_TOOL_NAME "altera_avalon_onchip_memory2"
+set_global_assignment -entity "interrupt_example_MEMORY" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_MEMORY" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "interrupt_example_CPU" -library "interrupt_example" -name IP_TOOL_NAME "altera_nios2_qsys"
+set_global_assignment -entity "interrupt_example_CPU" -library "interrupt_example" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "interrupt_example_CPU" -library "interrupt_example" -name IP_TOOL_ENV "Qsys"

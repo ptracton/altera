@@ -1,0 +1,602 @@
+Info: Starting: Create simulation model
+Info: ip-generate --project-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/ --output-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/simulation/ --file-set=SIM_VERILOG --report-file=html:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.html --report-file=sopcinfo:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.sopcinfo --report-file=csv:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.csv --report-file=spd:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.spd --report-file=sip:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/simulation/interrupt_example.sip --report-file=cmp:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.cmp --system-info=DEVICE_FAMILY="Cyclone IV GX" --system-info=DEVICE=Unknown --system-info=DEVICE_SPEEDGRADE=Unknown --component-file=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.qsys
+Progress: Loading qsys/interrupt_example.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.1]
+Progress: Parameterizing module clk_0
+Progress: Adding CPU [altera_nios2_qsys 13.1]
+Progress: Parameterizing module CPU
+Progress: Adding MEMORY [altera_avalon_onchip_memory2 13.1]
+Progress: Parameterizing module MEMORY
+Progress: Adding JTAG_UART [altera_avalon_jtag_uart 13.1]
+Progress: Parameterizing module JTAG_UART
+Progress: Adding LEDS [altera_avalon_pio 13.1]
+Progress: Parameterizing module LEDS
+Progress: Adding SWITCHES [altera_avalon_pio 13.1]
+Progress: Parameterizing module SWITCHES
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: interrupt_example.SWITCHES: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: interrupt_example: Generating interrupt_example "interrupt_example" for SIM_VERILOG
+Info: pipeline_bridge_swap_transform: After transform: 6 modules, 25 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_initial_interconnect_transform: After transform: 6 modules, 23 connections
+Info: merlin_translator_transform: After transform: 13 modules, 51 connections
+Info: merlin_domain_transform: After transform: 26 modules, 136 connections
+Info: merlin_router_transform: After transform: 33 modules, 164 connections
+Info: merlin_network_to_switch_transform: After transform: 46 modules, 201 connections
+Info: merlin_clock_and_reset_bridge_transform: After transform: 48 modules, 248 connections
+Info: merlin_hierarchy_transform: After transform: 7 modules, 27 connections
+Info: merlin_mm_transform: After transform: 7 modules, 27 connections
+Info: merlin_interrupt_mapper_transform: After transform: 8 modules, 31 connections
+Info: reset_adaptation_transform: After transform: 10 modules, 33 connections
+Info: CPU: Starting RTL generation for module 'interrupt_example_CPU'
+Info: CPU:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/eperlcmd -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2 -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2 -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=interrupt_example_CPU --dir=/tmp/alt6227_181970369210326725.dir/0001_CPU_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0001_CPU_gen//interrupt_example_CPU_processor_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt6227_181970369210326725.dir/0001_CPU_gen/  ]
+Info: CPU: # 2014.06.06 12:53:43 (*) Starting Nios II generation
+Info: CPU: # 2014.06.06 12:53:43 (*)   Checking for plaintext license.
+Info: CPU: # 2014.06.06 12:53:49 (*)   Couldn't query license setup in Quartus directory /data/pace/scratch03/tractp1/altera/13.1/quartus
+Info: CPU: # 2014.06.06 12:53:49 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: CPU: # 2014.06.06 12:53:49 (*)   LM_LICENSE_FILE environment variable is empty
+Info: CPU: # 2014.06.06 12:53:49 (*)   Plaintext license not found.
+Info: CPU: # 2014.06.06 12:53:49 (*)   No license required to generate encrypted Nios II/e.
+Info: CPU: # 2014.06.06 12:53:49 (*)   Elaborating CPU configuration settings
+Info: CPU: # 2014.06.06 12:53:49 (*)   Creating all objects for CPU
+Info: CPU: # 2014.06.06 12:53:53 (*)   Creating '/tmp/alt6227_181970369210326725.dir/0001_CPU_gen//interrupt_example_CPU_nios2_waves.do'
+Info: CPU: # 2014.06.06 12:53:53 (*)   Generating RTL from CPU objects
+Info: CPU: # 2014.06.06 12:53:53 (*)   Creating plain-text RTL
+Info: CPU: # 2014.06.06 12:53:59 (*) Done Nios II generation
+Info: CPU: Done RTL generation for module 'interrupt_example_CPU'
+Info: CPU: "interrupt_example" instantiated altera_nios2_qsys "CPU"
+Info: MEMORY: Starting RTL generation for module 'interrupt_example_MEMORY'
+Info: MEMORY:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/bin/perl -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=interrupt_example_MEMORY --dir=/tmp/alt6227_181970369210326725.dir/0002_MEMORY_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0002_MEMORY_gen//interrupt_example_MEMORY_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt6227_181970369210326725.dir/0002_MEMORY_gen/  ]
+Info: MEMORY: Done RTL generation for module 'interrupt_example_MEMORY'
+Info: MEMORY: "interrupt_example" instantiated altera_avalon_onchip_memory2 "MEMORY"
+Info: JTAG_UART: Starting RTL generation for module 'interrupt_example_JTAG_UART'
+Info: JTAG_UART:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/bin/perl -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=interrupt_example_JTAG_UART --dir=/tmp/alt6227_181970369210326725.dir/0003_JTAG_UART_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0003_JTAG_UART_gen//interrupt_example_JTAG_UART_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt6227_181970369210326725.dir/0003_JTAG_UART_gen/  ]
+Info: JTAG_UART: Done RTL generation for module 'interrupt_example_JTAG_UART'
+Info: JTAG_UART: "interrupt_example" instantiated altera_avalon_jtag_uart "JTAG_UART"
+Info: LEDS: Starting RTL generation for module 'interrupt_example_LEDS'
+Info: LEDS:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/bin/perl -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=interrupt_example_LEDS --dir=/tmp/alt6227_181970369210326725.dir/0004_LEDS_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0004_LEDS_gen//interrupt_example_LEDS_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt6227_181970369210326725.dir/0004_LEDS_gen/  ]
+Info: LEDS: Done RTL generation for module 'interrupt_example_LEDS'
+Info: LEDS: "interrupt_example" instantiated altera_avalon_pio "LEDS"
+Info: SWITCHES: Starting RTL generation for module 'interrupt_example_SWITCHES'
+Info: SWITCHES:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/bin/perl -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=interrupt_example_SWITCHES --dir=/tmp/alt6227_181970369210326725.dir/0005_SWITCHES_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0005_SWITCHES_gen//interrupt_example_SWITCHES_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt6227_181970369210326725.dir/0005_SWITCHES_gen/  ]
+Info: SWITCHES: Done RTL generation for module 'interrupt_example_SWITCHES'
+Info: SWITCHES: "interrupt_example" instantiated altera_avalon_pio "SWITCHES"
+Info: pipeline_bridge_swap_transform: After transform: 42 modules, 140 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: mm_interconnect_0: "interrupt_example" instantiated altera_merlin_interconnect_wrapper "mm_interconnect_0"
+Info: irq_mapper: "interrupt_example" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "interrupt_example" instantiated altera_reset_controller "rst_controller"
+Info: CPU_instruction_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "CPU_instruction_master_translator"
+Info: CPU_jtag_debug_module_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "CPU_jtag_debug_module_translator"
+Info: CPU_instruction_master_translator_avalon_universal_master_0_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "CPU_instruction_master_translator_avalon_universal_master_0_agent"
+Info: CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent"
+Info: CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+Info: addr_router: "mm_interconnect_0" instantiated altera_merlin_router "addr_router"
+Info: addr_router_001: "mm_interconnect_0" instantiated altera_merlin_router "addr_router_001"
+Info: id_router: "mm_interconnect_0" instantiated altera_merlin_router "id_router"
+Info: id_router_003: "mm_interconnect_0" instantiated altera_merlin_router "id_router_003"
+Info: cmd_xbar_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_xbar_demux"
+Info: cmd_xbar_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_xbar_demux_001"
+Info: cmd_xbar_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_xbar_mux"
+Info: cmd_xbar_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_xbar_mux_003"
+Info: Reusing file /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_xbar_demux"
+Info: rsp_xbar_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_xbar_demux_003"
+Info: rsp_xbar_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_xbar_mux"
+Info: Reusing file /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_xbar_mux_001"
+Info: Reusing file /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/simulation/submodules/altera_merlin_arbitrator.sv
+Info: interrupt_example: Done "interrupt_example" with 26 modules, 47 files, 959603 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.spd --output-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/simulation/
+Info: Doing: ip-make-simscript --spd=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.spd --output-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/simulation/
+Info: Generating the following file(s) for MODELSIM simulator in /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	25 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: Finished: Create Modelsim Project.
+Info: 
+Info: Starting: Create testbench Qsys system
+Info: /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/interrupt_example.ipx
+Info: ip-generate --project-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/ --output-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/ --report-file=sopcinfo:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.sopcinfo --report-file=html:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.html --system-info=DEVICE_FAMILY="Cyclone IV GX" --system-info=DEVICE=Unknown --system-info=DEVICE_SPEEDGRADE=Unknown --component-file=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.qsys
+Progress: Loading qsys/interrupt_example.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.1]
+Progress: Parameterizing module clk_0
+Progress: Adding CPU [altera_nios2_qsys 13.1]
+Progress: Parameterizing module CPU
+Progress: Adding MEMORY [altera_avalon_onchip_memory2 13.1]
+Progress: Parameterizing module MEMORY
+Progress: Adding JTAG_UART [altera_avalon_jtag_uart 13.1]
+Progress: Parameterizing module JTAG_UART
+Progress: Adding LEDS [altera_avalon_pio 13.1]
+Progress: Parameterizing module LEDS
+Progress: Adding SWITCHES [altera_avalon_pio 13.1]
+Progress: Parameterizing module SWITCHES
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: interrupt_example.SWITCHES: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ip-generate succeeded.
+Info: Loading component library for testbench.
+Progress: 
+Progress: 
+Progress: 
+Progress: (1) searching /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/root_components.ipx (ipx file)
+Info: Reading index /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/root_components.ipx
+Info: /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/root_components.ipx: Loading now from components.ipx
+Info: Reading index /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/ip_component_categories.ipx
+Info: /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/ip_component_categories.ipx described 0 plugins, 0 paths, in 0.01 seconds
+Info: /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0.02 seconds
+Info: Reading index /data/pace/scratch03/tractp1/altera/13.1/ip/altera/altera_components.ipx
+Info: /data/pace/scratch03/tractp1/altera/13.1/ip/altera/altera_components.ipx described 870 plugins, 0 paths, in 0.08 seconds
+Info: /data/pace/scratch03/tractp1/altera/13.1/ip/**/* matched 97 files in 0.20 seconds
+Info: /user/tractp1/.altera.quartus/ip/13.1/**/* matched 0 files in 0.00 seconds
+Info: /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/ip/**/* matched 0 files in 0.00 seconds
+Info: Reading index /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/interrupt_example.ipx
+Progress: Loading qsys/interrupt_example.qsys
+Info: /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/* matched 9 files in 0.01 seconds
+Info: /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/ip/**/* matched 0 files in 0.00 seconds
+Info: /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/*/* matched 3 files in 0.00 seconds
+Info: /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/interrupt_example.ipx described 0 plugins, 3 paths, in 0.01 seconds
+Info: /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/* matched 1 files in 0.01 seconds
+Info: /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/*/* matched 0 files in 0.00 seconds
+Info: Reading index /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/builtin.ipx
+Info: /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/builtin.ipx described 97 plugins, 0 paths, in 0.01 seconds
+Info: /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/**/* matched 9 files in 0.02 seconds
+Info: Reading index /data/pace/scratch03/tractp1/altera/13.1/quartus/common/librarian/factories/index.ipx
+Info: /data/pace/scratch03/tractp1/altera/13.1/quartus/common/librarian/factories/index.ipx described 151 plugins, 0 paths, in 0.02 seconds
+Info: /data/pace/scratch03/tractp1/altera/13.1/quartus/common/librarian/factories/**/* matched 4 files in 0.02 seconds
+Info: /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0.00 seconds
+Info: /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/root_components.ipx described 0 plugins, 9 paths, in 0.28 seconds
+Info: /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.28 seconds
+Progress: 
+Progress: 
+Progress: 
+Info: Loading presets
+Progress: Loading presets
+Info: Running script /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/tbgen.tcl
+Info: acds::register_package_version 12.1
+Info: send_message Info TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: get_module_property NAME
+Info: send_message Info TB_Gen: System design is: interrupt_example
+Info: TB_Gen: System design is: interrupt_example
+Info: get_interfaces 
+Info: get_connections 
+Info: get_interface_property clk EXPORT_OF
+Info: get_instance_property clk_0 CLASS_NAME
+Info: get_instance_assignment clk_0 testbench.partner.map.clk_in
+Info: get_interface_property reset EXPORT_OF
+Info: get_instance_property clk_0 CLASS_NAME
+Info: get_instance_assignment clk_0 testbench.partner.map.clk_in_reset
+Info: get_interface_property switches_input EXPORT_OF
+Info: get_instance_property SWITCHES CLASS_NAME
+Info: get_instance_assignment SWITCHES testbench.partner.map.external_connection
+Info: get_interface_property leds_output EXPORT_OF
+Info: get_instance_property LEDS CLASS_NAME
+Info: get_instance_assignment LEDS testbench.partner.map.external_connection
+Info: send_message Info TB_Gen: Creating testbench system : interrupt_example_tb with all standard BFMs
+Info: TB_Gen: Creating testbench system : interrupt_example_tb with all standard BFMs
+Info: create_system interrupt_example_tb
+Info: add_instance interrupt_example_inst interrupt_example 
+Info: set_use_testbench_naming_pattern true
+Info: get_instance_interfaces interrupt_example_inst
+Info: get_instance_interface_property interrupt_example_inst clk CLASS_NAME
+Info: get_instance_interface_property interrupt_example_inst reset CLASS_NAME
+Info: get_instance_interface_property interrupt_example_inst switches_input CLASS_NAME
+Info: get_instance_interface_property interrupt_example_inst leds_output CLASS_NAME
+Info: get_instance_interface_property interrupt_example_inst clk CLASS_NAME
+Info: send_message Info TB_Gen: clock_sink found: clk
+Info: TB_Gen: clock_sink found: clk
+Info: get_instance_interface_property interrupt_example_inst clk CLASS_NAME
+Info: add_instance interrupt_example_inst_clk_bfm altera_avalon_clock_source 
+Info: get_instance_property interrupt_example_inst_clk_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value interrupt_example_inst clk clockRate
+Info: set_instance_parameter_value interrupt_example_inst_clk_bfm CLOCK_RATE 50000000.0
+Info: set_instance_parameter_value interrupt_example_inst_clk_bfm CLOCK_UNIT 1
+Info: get_instance_property interrupt_example_inst_clk_bfm CLASS_NAME
+Info: get_instance_interface_property interrupt_example_inst clk CLASS_NAME
+Info: get_instance_interfaces interrupt_example_inst_clk_bfm
+Info: get_instance_interface_property interrupt_example_inst_clk_bfm clk CLASS_NAME
+Info: add_connection interrupt_example_inst_clk_bfm.clk interrupt_example_inst.clk
+Info: get_instance_interface_property interrupt_example_inst reset CLASS_NAME
+Info: send_message Info TB_Gen: reset_sink found: reset
+Info: TB_Gen: reset_sink found: reset
+Info: get_instance_interface_property interrupt_example_inst reset CLASS_NAME
+Info: add_instance interrupt_example_inst_reset_bfm altera_avalon_reset_source 
+Info: get_instance_property interrupt_example_inst_reset_bfm CLASS_NAME
+Info: get_instance_interface_ports interrupt_example_inst reset
+Info: get_instance_interface_port_property interrupt_example_inst reset reset_reset_n ROLE
+Info: set_instance_parameter_value interrupt_example_inst_reset_bfm ASSERT_HIGH_RESET 0
+Info: set_instance_parameter_value interrupt_example_inst_reset_bfm INITIAL_RESET_CYCLES 50
+Info: get_instance_property interrupt_example_inst_reset_bfm CLASS_NAME
+Info: get_instance_interfaces interrupt_example_inst_reset_bfm
+Info: get_instance_interface_property interrupt_example_inst_reset_bfm reset CLASS_NAME
+Info: get_instance_interface_property interrupt_example_inst_reset_bfm clk CLASS_NAME
+Info: get_instance_property interrupt_example_inst_reset_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value interrupt_example_inst reset associatedClock
+Info: get_instance_interfaces interrupt_example_inst_clk_bfm
+Info: get_instance_interface_property interrupt_example_inst_clk_bfm clk CLASS_NAME
+Info: send_message Warning TB_Gen: interrupt_example_inst_reset_bfm is not associated to any clock; connecting interrupt_example_inst_reset_bfm to 'interrupt_example_inst_clk_bfm.clk'
+Warning: TB_Gen: interrupt_example_inst_reset_bfm is not associated to any clock; connecting interrupt_example_inst_reset_bfm to 'interrupt_example_inst_clk_bfm.clk'
+Info: add_connection interrupt_example_inst_clk_bfm.clk interrupt_example_inst_reset_bfm.clk
+Info: get_instance_interface_property interrupt_example_inst reset CLASS_NAME
+Info: get_instance_interfaces interrupt_example_inst_reset_bfm
+Info: get_instance_interface_property interrupt_example_inst_reset_bfm reset CLASS_NAME
+Info: get_instance_interface_property interrupt_example_inst_reset_bfm clk CLASS_NAME
+Info: add_connection interrupt_example_inst_reset_bfm.reset interrupt_example_inst.reset
+Info: get_instance_interface_property interrupt_example_inst switches_input CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: switches_input
+Info: TB_Gen: conduit_end found: switches_input
+Info: get_instance_interface_property interrupt_example_inst switches_input CLASS_NAME
+Info: add_instance interrupt_example_inst_switches_input_bfm altera_conduit_bfm 
+Info: get_instance_property interrupt_example_inst_switches_input_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value interrupt_example_inst switches_input associatedClock
+Info: get_instance_interface_parameter_value interrupt_example_inst switches_input associatedReset
+Info: get_instance_interface_ports interrupt_example_inst switches_input
+Info: get_instance_interface_port_property interrupt_example_inst switches_input switches_input_export ROLE
+Info: get_instance_interface_port_property interrupt_example_inst switches_input switches_input_export WIDTH
+Info: get_instance_interface_port_property interrupt_example_inst switches_input switches_input_export DIRECTION
+Info: set_instance_parameter_value interrupt_example_inst_switches_input_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value interrupt_example_inst_switches_input_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value interrupt_example_inst_switches_input_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value interrupt_example_inst_switches_input_bfm SIGNAL_WIDTHS 8
+Info: set_instance_parameter_value interrupt_example_inst_switches_input_bfm SIGNAL_DIRECTIONS output
+Info: get_instance_property interrupt_example_inst_switches_input_bfm CLASS_NAME
+Info: get_instance_interface_property interrupt_example_inst switches_input CLASS_NAME
+Info: get_instance_interfaces interrupt_example_inst_switches_input_bfm
+Info: get_instance_interface_property interrupt_example_inst_switches_input_bfm conduit CLASS_NAME
+Info: add_connection interrupt_example_inst_switches_input_bfm.conduit interrupt_example_inst.switches_input
+Info: get_instance_interface_property interrupt_example_inst leds_output CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: leds_output
+Info: TB_Gen: conduit_end found: leds_output
+Info: get_instance_interface_property interrupt_example_inst leds_output CLASS_NAME
+Info: add_instance interrupt_example_inst_leds_output_bfm altera_conduit_bfm 
+Info: get_instance_property interrupt_example_inst_leds_output_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value interrupt_example_inst leds_output associatedClock
+Info: get_instance_interface_parameter_value interrupt_example_inst leds_output associatedReset
+Info: get_instance_interface_ports interrupt_example_inst leds_output
+Info: get_instance_interface_port_property interrupt_example_inst leds_output leds_output_export ROLE
+Info: get_instance_interface_port_property interrupt_example_inst leds_output leds_output_export WIDTH
+Info: get_instance_interface_port_property interrupt_example_inst leds_output leds_output_export DIRECTION
+Info: set_instance_parameter_value interrupt_example_inst_leds_output_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value interrupt_example_inst_leds_output_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value interrupt_example_inst_leds_output_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value interrupt_example_inst_leds_output_bfm SIGNAL_WIDTHS 8
+Info: set_instance_parameter_value interrupt_example_inst_leds_output_bfm SIGNAL_DIRECTIONS input
+Info: get_instance_property interrupt_example_inst_leds_output_bfm CLASS_NAME
+Info: get_instance_interface_property interrupt_example_inst leds_output CLASS_NAME
+Info: get_instance_interfaces interrupt_example_inst_leds_output_bfm
+Info: get_instance_interface_property interrupt_example_inst_leds_output_bfm conduit CLASS_NAME
+Info: add_connection interrupt_example_inst_leds_output_bfm.conduit interrupt_example_inst.leds_output
+Info: send_message Info TB_Gen: Saving testbench system: interrupt_example_tb.qsys
+Info: TB_Gen: Saving testbench system: interrupt_example_tb.qsys
+Info: save_system interrupt_example_tb.qsys
+Info: send_message Info TB_Gen: TBGEN SUCCESSFUL
+Info: TB_Gen: TBGEN SUCCESSFUL
+Info: Testbench system: /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/interrupt_example_tb.qsys
+Info: Done
+Info: ip-generate --project-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/ --output-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/interrupt_example_tb/simulation/ --file-set=SIM_VERILOG --report-file=html:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/interrupt_example_tb.html --system-info=DEVICE_FAMILY="Cyclone IV GX" --system-info=DEVICE=Unknown --system-info=DEVICE_SPEEDGRADE=Unknown --component-file=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/interrupt_example_tb.qsys --report-file=csv:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example_tb.csv --report-file=spd:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example_tb.spd
+Progress: Loading testbench/interrupt_example_tb.qsys
+Progress: Reading input file
+Progress: Adding interrupt_example_inst [interrupt_example 1.0]
+Progress: Parameterizing module interrupt_example_inst
+Progress: Adding interrupt_example_inst_clk_bfm [altera_avalon_clock_source 13.1]
+Progress: Parameterizing module interrupt_example_inst_clk_bfm
+Progress: Adding interrupt_example_inst_reset_bfm [altera_avalon_reset_source 13.1]
+Progress: Parameterizing module interrupt_example_inst_reset_bfm
+Progress: Adding interrupt_example_inst_switches_input_bfm [altera_conduit_bfm 13.1]
+Progress: Parameterizing module interrupt_example_inst_switches_input_bfm
+Progress: Adding interrupt_example_inst_leds_output_bfm [altera_conduit_bfm 13.1]
+Progress: Parameterizing module interrupt_example_inst_leds_output_bfm
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: interrupt_example_tb.interrupt_example_inst.SWITCHES: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: interrupt_example_tb.interrupt_example_inst_clk_bfm: Elaborate: altera_clock_source
+Info: interrupt_example_tb.interrupt_example_inst_clk_bfm:            $Revision: #1 $
+Info: interrupt_example_tb.interrupt_example_inst_clk_bfm:            $Date: 2013/08/11 $
+Info: interrupt_example_tb.interrupt_example_inst_reset_bfm: Elaborate: altera_reset_source
+Info: interrupt_example_tb.interrupt_example_inst_reset_bfm:            $Revision: #1 $
+Info: interrupt_example_tb.interrupt_example_inst_reset_bfm:            $Date: 2013/08/11 $
+Info: interrupt_example_tb.interrupt_example_inst_reset_bfm: Reset is negatively asserted.
+Info: interrupt_example_tb: Generating interrupt_example_tb "interrupt_example_tb" for SIM_VERILOG
+Info: pipeline_bridge_swap_transform: After transform: 5 modules, 5 connections
+Info: No custom instruction connections, skipping transform 
+Info: pipeline_bridge_swap_transform: After transform: 6 modules, 25 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_initial_interconnect_transform: After transform: 6 modules, 23 connections
+Info: merlin_translator_transform: After transform: 13 modules, 51 connections
+Info: merlin_domain_transform: After transform: 26 modules, 136 connections
+Info: merlin_router_transform: After transform: 33 modules, 164 connections
+Info: merlin_network_to_switch_transform: After transform: 46 modules, 201 connections
+Info: merlin_clock_and_reset_bridge_transform: After transform: 48 modules, 248 connections
+Info: merlin_hierarchy_transform: After transform: 7 modules, 27 connections
+Info: merlin_mm_transform: After transform: 7 modules, 27 connections
+Info: merlin_interrupt_mapper_transform: After transform: 8 modules, 31 connections
+Info: reset_adaptation_transform: After transform: 10 modules, 33 connections
+Info: interrupt_example_inst: "interrupt_example_tb" instantiated interrupt_example "interrupt_example_inst"
+Info: interrupt_example_inst_clk_bfm: "interrupt_example_tb" instantiated altera_avalon_clock_source "interrupt_example_inst_clk_bfm"
+Info: interrupt_example_inst_reset_bfm: "interrupt_example_tb" instantiated altera_avalon_reset_source "interrupt_example_inst_reset_bfm"
+Info: Reusing file /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/interrupt_example_tb/simulation/submodules/verbosity_pkg.sv
+Info: interrupt_example_inst_switches_input_bfm: "interrupt_example_tb" instantiated altera_conduit_bfm "interrupt_example_inst_switches_input_bfm"
+Info: Reusing file /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/interrupt_example_tb/simulation/submodules/verbosity_pkg.sv
+Info: interrupt_example_inst_leds_output_bfm: "interrupt_example_tb" instantiated altera_conduit_bfm "interrupt_example_inst_leds_output_bfm"
+Info: Reusing file /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/interrupt_example_tb/simulation/submodules/verbosity_pkg.sv
+Info: CPU: Starting RTL generation for module 'interrupt_example_CPU'
+Info: CPU:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/eperlcmd -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2 -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2 -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=interrupt_example_CPU --dir=/tmp/alt6227_181970369210326725.dir/0029_CPU_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0029_CPU_gen//interrupt_example_CPU_processor_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt6227_181970369210326725.dir/0029_CPU_gen/  ]
+Info: CPU: # 2014.06.06 12:54:35 (*) Starting Nios II generation
+Info: CPU: # 2014.06.06 12:54:35 (*)   Checking for plaintext license.
+Info: CPU: # 2014.06.06 12:54:40 (*)   Couldn't query license setup in Quartus directory /data/pace/scratch03/tractp1/altera/13.1/quartus
+Info: CPU: # 2014.06.06 12:54:40 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: CPU: # 2014.06.06 12:54:40 (*)   LM_LICENSE_FILE environment variable is empty
+Info: CPU: # 2014.06.06 12:54:40 (*)   Plaintext license not found.
+Info: CPU: # 2014.06.06 12:54:40 (*)   No license required to generate encrypted Nios II/e.
+Info: CPU: # 2014.06.06 12:54:40 (*)   Elaborating CPU configuration settings
+Info: CPU: # 2014.06.06 12:54:40 (*)   Creating all objects for CPU
+Info: CPU: # 2014.06.06 12:54:44 (*)   Creating '/tmp/alt6227_181970369210326725.dir/0029_CPU_gen//interrupt_example_CPU_nios2_waves.do'
+Info: CPU: # 2014.06.06 12:54:44 (*)   Generating RTL from CPU objects
+Info: CPU: # 2014.06.06 12:54:44 (*)   Creating plain-text RTL
+Info: CPU: # 2014.06.06 12:54:50 (*) Done Nios II generation
+Info: CPU: Done RTL generation for module 'interrupt_example_CPU'
+Info: CPU: "interrupt_example_inst" instantiated altera_nios2_qsys "CPU"
+Info: MEMORY: Starting RTL generation for module 'interrupt_example_MEMORY'
+Info: MEMORY:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/bin/perl -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=interrupt_example_MEMORY --dir=/tmp/alt6227_181970369210326725.dir/0030_MEMORY_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0030_MEMORY_gen//interrupt_example_MEMORY_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt6227_181970369210326725.dir/0030_MEMORY_gen/  ]
+Info: MEMORY: Done RTL generation for module 'interrupt_example_MEMORY'
+Info: MEMORY: "interrupt_example_inst" instantiated altera_avalon_onchip_memory2 "MEMORY"
+Info: JTAG_UART: Starting RTL generation for module 'interrupt_example_JTAG_UART'
+Info: JTAG_UART:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/bin/perl -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=interrupt_example_JTAG_UART --dir=/tmp/alt6227_181970369210326725.dir/0031_JTAG_UART_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0031_JTAG_UART_gen//interrupt_example_JTAG_UART_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt6227_181970369210326725.dir/0031_JTAG_UART_gen/  ]
+Info: JTAG_UART: Done RTL generation for module 'interrupt_example_JTAG_UART'
+Info: JTAG_UART: "interrupt_example_inst" instantiated altera_avalon_jtag_uart "JTAG_UART"
+Info: LEDS: Starting RTL generation for module 'interrupt_example_LEDS'
+Info: LEDS:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/bin/perl -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=interrupt_example_LEDS --dir=/tmp/alt6227_181970369210326725.dir/0032_LEDS_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0032_LEDS_gen//interrupt_example_LEDS_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt6227_181970369210326725.dir/0032_LEDS_gen/  ]
+Info: LEDS: Done RTL generation for module 'interrupt_example_LEDS'
+Info: LEDS: "interrupt_example_inst" instantiated altera_avalon_pio "LEDS"
+Info: SWITCHES: Starting RTL generation for module 'interrupt_example_SWITCHES'
+Info: SWITCHES:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/bin/perl -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=interrupt_example_SWITCHES --dir=/tmp/alt6227_181970369210326725.dir/0033_SWITCHES_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0033_SWITCHES_gen//interrupt_example_SWITCHES_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt6227_181970369210326725.dir/0033_SWITCHES_gen/  ]
+Info: SWITCHES: Done RTL generation for module 'interrupt_example_SWITCHES'
+Info: SWITCHES: "interrupt_example_inst" instantiated altera_avalon_pio "SWITCHES"
+Info: pipeline_bridge_swap_transform: After transform: 42 modules, 140 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: mm_interconnect_0: "interrupt_example_inst" instantiated altera_merlin_interconnect_wrapper "mm_interconnect_0"
+Info: irq_mapper: "interrupt_example_inst" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "interrupt_example_inst" instantiated altera_reset_controller "rst_controller"
+Info: CPU_instruction_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "CPU_instruction_master_translator"
+Info: CPU_jtag_debug_module_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "CPU_jtag_debug_module_translator"
+Info: CPU_instruction_master_translator_avalon_universal_master_0_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "CPU_instruction_master_translator_avalon_universal_master_0_agent"
+Info: CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent"
+Info: CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+Info: addr_router: "mm_interconnect_0" instantiated altera_merlin_router "addr_router"
+Info: addr_router_001: "mm_interconnect_0" instantiated altera_merlin_router "addr_router_001"
+Info: id_router: "mm_interconnect_0" instantiated altera_merlin_router "id_router"
+Info: id_router_003: "mm_interconnect_0" instantiated altera_merlin_router "id_router_003"
+Info: cmd_xbar_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_xbar_demux"
+Info: cmd_xbar_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_xbar_demux_001"
+Info: cmd_xbar_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_xbar_mux"
+Info: cmd_xbar_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_xbar_mux_003"
+Info: Reusing file /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/interrupt_example_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_xbar_demux"
+Info: rsp_xbar_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_xbar_demux_003"
+Info: rsp_xbar_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_xbar_mux"
+Info: Reusing file /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/interrupt_example_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_xbar_mux_001"
+Info: Reusing file /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/interrupt_example_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: interrupt_example_tb: Done "interrupt_example_tb" with 31 modules, 53 files, 983607 bytes
+Info: ip-generate succeeded.
+Info: sim-script-gen --spd=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example_tb.spd --output-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/
+Info: Doing: ip-make-simscript --spd=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example_tb.spd --output-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/
+Info: Generating the following file(s) for MODELSIM simulator in /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	31 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/testbench/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: Finished: Create testbench Qsys system
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/ --output-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/ --report-file=bsf:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.bsf --system-info=DEVICE_FAMILY="Cyclone IV GX" --system-info=DEVICE=Unknown --system-info=DEVICE_SPEEDGRADE=Unknown --component-file=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.qsys
+Progress: Loading qsys/interrupt_example.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.1]
+Progress: Parameterizing module clk_0
+Progress: Adding CPU [altera_nios2_qsys 13.1]
+Progress: Parameterizing module CPU
+Progress: Adding MEMORY [altera_avalon_onchip_memory2 13.1]
+Progress: Parameterizing module MEMORY
+Progress: Adding JTAG_UART [altera_avalon_jtag_uart 13.1]
+Progress: Parameterizing module JTAG_UART
+Progress: Adding LEDS [altera_avalon_pio 13.1]
+Progress: Parameterizing module LEDS
+Progress: Adding SWITCHES [altera_avalon_pio 13.1]
+Progress: Parameterizing module SWITCHES
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: interrupt_example.SWITCHES: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/ --output-directory=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/synthesis/ --file-set=QUARTUS_SYNTH --report-file=html:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.html --report-file=sopcinfo:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.sopcinfo --report-file=cmp:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.cmp --report-file=qip:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/synthesis/interrupt_example.qip --report-file=svd --report-file=regmap:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/synthesis/interrupt_example.regmap --report-file=debuginfo:/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/synthesis/interrupt_example.debuginfo --system-info=DEVICE_FAMILY="Cyclone IV GX" --system-info=DEVICE=Unknown --system-info=DEVICE_SPEEDGRADE=Unknown --component-file=/data/pace/scratch03/tractp1/hardware/altera/interrupts_example/qsys/interrupt_example.qsys --language=VERILOG
+Progress: Loading qsys/interrupt_example.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.1]
+Progress: Parameterizing module clk_0
+Progress: Adding CPU [altera_nios2_qsys 13.1]
+Progress: Parameterizing module CPU
+Progress: Adding MEMORY [altera_avalon_onchip_memory2 13.1]
+Progress: Parameterizing module MEMORY
+Progress: Adding JTAG_UART [altera_avalon_jtag_uart 13.1]
+Progress: Parameterizing module JTAG_UART
+Progress: Adding LEDS [altera_avalon_pio 13.1]
+Progress: Parameterizing module LEDS
+Progress: Adding SWITCHES [altera_avalon_pio 13.1]
+Progress: Parameterizing module SWITCHES
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: interrupt_example.SWITCHES: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: interrupt_example: Generating interrupt_example "interrupt_example" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 6 modules, 25 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_initial_interconnect_transform: After transform: 6 modules, 23 connections
+Info: merlin_translator_transform: After transform: 13 modules, 51 connections
+Info: merlin_domain_transform: After transform: 26 modules, 136 connections
+Info: merlin_router_transform: After transform: 33 modules, 164 connections
+Info: merlin_network_to_switch_transform: After transform: 46 modules, 201 connections
+Info: merlin_clock_and_reset_bridge_transform: After transform: 48 modules, 248 connections
+Info: merlin_hierarchy_transform: After transform: 7 modules, 27 connections
+Info: merlin_mm_transform: After transform: 7 modules, 27 connections
+Info: merlin_interrupt_mapper_transform: After transform: 8 modules, 31 connections
+Info: reset_adaptation_transform: After transform: 10 modules, 33 connections
+Info: CPU: Starting RTL generation for module 'interrupt_example_CPU'
+Info: CPU:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/eperlcmd -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2 -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2 -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=interrupt_example_CPU --dir=/tmp/alt6227_181970369210326725.dir/0053_CPU_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0053_CPU_gen//interrupt_example_CPU_processor_configuration.pl  --do_build_sim=0  ]
+Info: CPU: # 2014.06.06 12:55:10 (*) Starting Nios II generation
+Info: CPU: # 2014.06.06 12:55:10 (*)   Checking for plaintext license.
+Info: CPU: # 2014.06.06 12:55:14 (*)   Couldn't query license setup in Quartus directory /data/pace/scratch03/tractp1/altera/13.1/quartus
+Info: CPU: # 2014.06.06 12:55:14 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: CPU: # 2014.06.06 12:55:14 (*)   LM_LICENSE_FILE environment variable is empty
+Info: CPU: # 2014.06.06 12:55:14 (*)   Plaintext license not found.
+Info: CPU: # 2014.06.06 12:55:14 (*)   No license required to generate encrypted Nios II/e.
+Info: CPU: # 2014.06.06 12:55:14 (*)   Elaborating CPU configuration settings
+Info: CPU: # 2014.06.06 12:55:14 (*)   Creating all objects for CPU
+Info: CPU: # 2014.06.06 12:55:18 (*)   Generating RTL from CPU objects
+Info: CPU: # 2014.06.06 12:55:18 (*)   Creating plain-text RTL
+Info: CPU: # 2014.06.06 12:55:24 (*) Done Nios II generation
+Info: CPU: Done RTL generation for module 'interrupt_example_CPU'
+Info: CPU: "interrupt_example" instantiated altera_nios2_qsys "CPU"
+Info: MEMORY: Starting RTL generation for module 'interrupt_example_MEMORY'
+Info: MEMORY:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/bin/perl -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=interrupt_example_MEMORY --dir=/tmp/alt6227_181970369210326725.dir/0054_MEMORY_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0054_MEMORY_gen//interrupt_example_MEMORY_component_configuration.pl  --do_build_sim=0  ]
+Info: MEMORY: Done RTL generation for module 'interrupt_example_MEMORY'
+Info: MEMORY: "interrupt_example" instantiated altera_avalon_onchip_memory2 "MEMORY"
+Info: JTAG_UART: Starting RTL generation for module 'interrupt_example_JTAG_UART'
+Info: JTAG_UART:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/bin/perl -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=interrupt_example_JTAG_UART --dir=/tmp/alt6227_181970369210326725.dir/0055_JTAG_UART_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0055_JTAG_UART_gen//interrupt_example_JTAG_UART_component_configuration.pl  --do_build_sim=0  ]
+Info: JTAG_UART: Done RTL generation for module 'interrupt_example_JTAG_UART'
+Info: JTAG_UART: "interrupt_example" instantiated altera_avalon_jtag_uart "JTAG_UART"
+Info: LEDS: Starting RTL generation for module 'interrupt_example_LEDS'
+Info: LEDS:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/bin/perl -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=interrupt_example_LEDS --dir=/tmp/alt6227_181970369210326725.dir/0056_LEDS_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0056_LEDS_gen//interrupt_example_LEDS_component_configuration.pl  --do_build_sim=0  ]
+Info: LEDS: Done RTL generation for module 'interrupt_example_LEDS'
+Info: LEDS: "interrupt_example" instantiated altera_avalon_pio "LEDS"
+Info: SWITCHES: Starting RTL generation for module 'interrupt_example_SWITCHES'
+Info: SWITCHES:   Generation command is [exec /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/bin/perl -I /data/pace/scratch03/tractp1/altera/13.1/quartus/linux/perl/lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/europa -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /data/pace/scratch03/tractp1/altera/13.1/quartus/sopc_builder/bin -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /data/pace/scratch03/tractp1/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=interrupt_example_SWITCHES --dir=/tmp/alt6227_181970369210326725.dir/0057_SWITCHES_gen/ --quartus_dir=/data/pace/scratch03/tractp1/altera/13.1/quartus --verilog --config=/tmp/alt6227_181970369210326725.dir/0057_SWITCHES_gen//interrupt_example_SWITCHES_component_configuration.pl  --do_build_sim=0  ]
+Info: SWITCHES: Done RTL generation for module 'interrupt_example_SWITCHES'
+Info: SWITCHES: "interrupt_example" instantiated altera_avalon_pio "SWITCHES"
+Info: pipeline_bridge_swap_transform: After transform: 42 modules, 140 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 42 modules, 140 connections
+Info: mm_interconnect_0: "interrupt_example" instantiated altera_merlin_interconnect_wrapper "mm_interconnect_0"
+Info: irq_mapper: "interrupt_example" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "interrupt_example" instantiated altera_reset_controller "rst_controller"
+Info: CPU_instruction_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "CPU_instruction_master_translator"
+Info: CPU_jtag_debug_module_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "CPU_jtag_debug_module_translator"
+Info: CPU_instruction_master_translator_avalon_universal_master_0_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "CPU_instruction_master_translator_avalon_universal_master_0_agent"
+Info: CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent"
+Info: CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "CPU_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+Info: addr_router: "mm_interconnect_0" instantiated altera_merlin_router "addr_router"
+Info: addr_router_001: "mm_interconnect_0" instantiated altera_merlin_router "addr_router_001"
+Info: id_router: "mm_interconnect_0" instantiated altera_merlin_router "id_router"
+Info: id_router_003: "mm_interconnect_0" instantiated altera_merlin_router "id_router_003"
+Info: cmd_xbar_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_xbar_demux"
+Info: cmd_xbar_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_xbar_demux_001"
+Info: cmd_xbar_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_xbar_mux"
+Info: cmd_xbar_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_xbar_mux_003"
+Info: Reusing file /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_xbar_demux"
+Info: rsp_xbar_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_xbar_demux_003"
+Info: rsp_xbar_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_xbar_mux"
+Info: Reusing file /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_xbar_mux_001"
+Info: Reusing file /data/pace/scratch03/tractp1/hardware/altera/interrupts_example/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: interrupt_example: Done "interrupt_example" with 26 modules, 40 files, 947046 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
